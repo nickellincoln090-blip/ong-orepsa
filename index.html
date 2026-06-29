@@ -309,7 +309,7 @@
     /* ── CONTACT ── */
     .contact-section { background: var(--gris-bg); }
     .map-wrapper { position: relative; border-radius: 10px; overflow: hidden; margin-top: 1.5rem; border: 1px solid var(--border); }
-    .map-static { width: 100%; height: 220px; object-fit: cover; display: block; }
+    .map-static { width: 100%; height: 220px; display: block; }
     .map-overlay { position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; background: rgba(0,0,0,0.15); transition: background 0.2s; }
     .map-overlay:hover { background: rgba(0,0,0,0.25); }
     .map-pin { background: #1a3a5c; color: white; padding: 0.5rem 1rem; border-radius: 6px; font-size: 0.82rem; font-weight: 700; display: flex; align-items: center; gap: 0.4rem; box-shadow: 0 2px 8px rgba(0,0,0,0.3); }
@@ -808,15 +808,15 @@
       </div>
       <div>
         <div class="map-wrapper">
-          <a href="https://www.google.com/maps/search/ONG+OREPSA+Dapaong/@10.860149,0.190169,18z" target="_blank" rel="noopener">
-            <img class="map-static"
-              src="https://staticmap.openstreetmap.de/staticmap.php?center=10.860149,0.190169&zoom=17&size=600x220&maptype=mapnik&markers=10.860149,0.190169,red-pushpin"
-              onerror="this.style.background='#e8edf2';this.alt='ONG OREPSA Dapaong - Carte indisponible'"
-              alt="Localisation ONG OREPSA Dapaong" />
-            <div class="map-overlay">
-              <div class="map-pin">📍 ONG OREPSA Dapaong</div>
-            </div>
-          </a>
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d500!2d0.190169!3d10.860149!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMTDCsDUxJzM2LjUiTiAwwrAxMScyNC42IkU!5e0!3m2!1sfr!2stg!4v1234567890"
+            class="map-static"
+            style="border:0;"
+            allowfullscreen=""
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"
+            title="Localisation ONG OREPSA Dapaong">
+          </iframe>
         </div>
         <a class="map-link-btn"
            href="https://www.google.com/maps/search/ONG+OREPSA+Dapaong/@10.860149,0.190169,18z"
