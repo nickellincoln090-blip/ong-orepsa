@@ -1,0 +1,1417 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="google-site-verification" content="XBMtvaDnAYlFYIdSveysgbKV9a7Ux2UamU1nkgGUGQo" />
+
+  <!-- SEO Meta Tags -->
+  <meta name="description" content="ONG OREPSA — Organisation pour la Réhabilitation et l'Épanouissement des Populations de la Savane. Basée à Dapaong, Togo. Développement communautaire, aide humanitaire, éducation et santé." />
+  <meta name="keywords" content="ONG OREPSA, Dapaong, Togo, organisation non gouvernementale, développement, savane, aide humanitaire, éducation, santé" />
+  <meta name="author" content="ONG OREPSA Dapaong" />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://www.ong-orepsa.com/" />
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://www.ong-orepsa.com/" />
+  <meta property="og:title" content="ONG OREPSA — Dapaong, Togo" />
+  <meta property="og:description" content="Organisation pour la Réhabilitation et l'Épanouissement des Populations de la Savane. Développement communautaire au Togo." />
+  <meta property="og:locale" content="fr_FR" />
+
+  <!-- JSON-LD Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "NGO",
+    "name": "ONG OREPSA Dapaong",
+    "alternateName": "OREPSA",
+    "url": "https://www.ong-orepsa.com",
+    "description": "Organisation pour la Réhabilitation et l'Épanouissement des Populations de la Savane",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "V56R+32",
+      "addressLocality": "Dapaong",
+      "addressRegion": "Région des Savanes",
+      "addressCountry": "TG",
+      "postalCode": "BP 265"
+    },
+    "geo": {
+      "@type": "GeoCoordinates",
+      "latitude": 10.860149,
+      "longitude": 0.190169
+    },
+    "telephone": "+22890168236",
+    "email": "info@ong-orepsa.com",
+    "sameAs": [
+      "https://www.google.com/maps/search/ONG+OREPSA+Dapaong/@10.860149,0.190169,18z"
+    ]
+  }
+  </script>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ONG OREPSA – Agir. Protéger. Transformer.</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --bleu: #1a3a5c;
+      --bleu-clair: #254d7a;
+      --or: #c9a84c;
+      --or-pale: #f5efd4;
+      --blanc: #ffffff;
+      --gris-bg: #f8f9fa;
+      --gris: #6b7280;
+      --noir: #1f2937;
+      --border: #e5e7eb;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: 'Inter', sans-serif; background: var(--blanc); color: var(--noir); }
+
+    /* ── NAV ── */
+    nav {
+      position: sticky; top: 0; z-index: 200;
+      background: var(--blanc); border-bottom: 1px solid var(--border);
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 0.75rem 2.5rem;
+      box-shadow: 0 1px 8px rgba(0,0,0,0.06);
+    }
+    .nav-logo { display: flex; align-items: center; gap: 0.85rem; }
+    .nav-logo img { width: 44px; height: 44px; border-radius: 50%; object-fit: cover; border: 2px solid var(--or); }
+    .nav-logo-text h1 { font-family: 'Playfair Display', serif; font-size: 1rem; color: var(--bleu); font-weight: 700; line-height: 1.2; }
+    .nav-logo-text small { font-size: 0.65rem; color: var(--gris); font-weight: 500; letter-spacing: 0.05em; }
+    .nav-links { display: flex; gap: 2rem; list-style: none; }
+    .nav-links a { text-decoration: none; color: var(--gris); font-size: 0.82rem; font-weight: 500; letter-spacing: 0.02em; transition: color 0.2s; }
+    .nav-links a:hover { color: var(--bleu); }
+    .nav-cta { background: var(--bleu); color: white; padding: 0.5rem 1.2rem; border-radius: 4px; font-size: 0.82rem; font-weight: 600; text-decoration: none; transition: background 0.2s; }
+    .nav-cta:hover { background: var(--bleu-clair); }
+
+    /* ── HERO ── */
+    .hero {
+      background: var(--bleu);
+      position: relative; overflow: hidden;
+      padding: 6rem 2rem 5rem;
+      display: flex; align-items: center; justify-content: center;
+      min-height: 85vh;
+    }
+    .hero::before {
+      content: ''; position: absolute; inset: 0;
+      background: radial-gradient(ellipse at 70% 50%, rgba(201,168,76,0.08) 0%, transparent 60%);
+    }
+    .hero-inner { position: relative; z-index: 1; max-width: 720px; text-align: center; color: white; }
+    .hero-logo {
+      width: 130px; height: 130px; border-radius: 50%;
+      border: 3px solid rgba(201,168,76,0.6);
+      object-fit: cover; margin: 0 auto 2rem; display: block;
+      box-shadow: 0 0 0 8px rgba(201,168,76,0.1);
+    }
+    .hero-tag {
+      display: inline-block; font-size: 0.68rem; font-weight: 600;
+      letter-spacing: 0.2em; text-transform: uppercase;
+      color: var(--or); border: 1px solid rgba(201,168,76,0.4);
+      padding: 0.3rem 1rem; border-radius: 2rem; margin-bottom: 1.8rem;
+    }
+    .hero h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(2.4rem, 6vw, 3.8rem); font-weight: 900;
+      line-height: 1.1; margin-bottom: 1.4rem; letter-spacing: -0.01em;
+    }
+    .hero h2 em { font-style: italic; color: var(--or); }
+    .hero p { font-size: 1rem; color: rgba(255,255,255,0.72); max-width: 500px; margin: 0 auto 2.5rem; line-height: 1.75; }
+    .hero-cta { display: inline-flex; gap: 0.85rem; flex-wrap: wrap; justify-content: center; }
+    .btn { padding: 0.7rem 1.6rem; border-radius: 4px; font-weight: 600; font-size: 0.85rem; text-decoration: none; transition: all 0.2s; cursor: pointer; border: none; display: inline-flex; align-items: center; gap: 0.45rem; }
+    .btn-or { background: var(--or); color: var(--bleu); }
+    .btn-or:hover { background: #d4b45c; }
+    .btn-outline { background: transparent; color: white; border: 1.5px solid rgba(255,255,255,0.35); }
+    .btn-outline:hover { background: rgba(255,255,255,0.08); border-color: rgba(255,255,255,0.6); }
+
+    /* ── BANDE OR ── */
+    .or-band { height: 3px; background: linear-gradient(90deg, transparent, var(--or), transparent); }
+
+    /* ── STATS ── */
+    /* ── BANDE DÉFILANTE DORÉE ── */
+    .ticker-wrap {
+      background: linear-gradient(90deg, #b8943a 0%, #c9a84c 30%, #e0c06a 55%, #c9a84c 80%, #b8943a 100%);
+      overflow: hidden;
+      position: relative;
+      height: 56px;
+      display: flex;
+      align-items: center;
+      border-top: 1px solid rgba(255,255,255,0.25);
+      border-bottom: 1px solid rgba(139,104,28,0.5);
+      box-shadow: 0 2px 12px rgba(180,140,40,0.3), inset 0 1px 0 rgba(255,255,255,0.2);
+    }
+    .ticker-label {
+      position: absolute; left: 0; top: 0; bottom: 0; z-index: 10;
+      background: #1a3a5c;
+      color: #c9a84c;
+      font-family: 'Playfair Display', serif;
+      font-size: 0.75rem; font-weight: 700;
+      font-style: italic;
+      letter-spacing: 0.08em;
+      padding: 0 1.6rem 0 1.2rem;
+      display: flex; align-items: center; justify-content: center;
+      white-space: nowrap;
+      clip-path: polygon(0 0, calc(100% - 14px) 0, 100% 50%, calc(100% - 14px) 100%, 0 100%);
+      min-width: 120px;
+      box-shadow: 2px 0 12px rgba(0,0,0,0.2);
+    }
+    .ticker-fade-left {
+      position: absolute; left: 120px; top: 0; bottom: 0;
+      width: 40px; z-index: 5;
+      background: linear-gradient(to right, #c9a84c, transparent);
+      pointer-events: none;
+    }
+    .ticker-fade-right {
+      position: absolute; right: 0; top: 0; bottom: 0;
+      width: 80px; z-index: 5;
+      background: linear-gradient(to left, #b8943a, transparent);
+      pointer-events: none;
+    }
+    .ticker-track {
+      display: flex;
+      width: max-content;
+      animation: ticker-scroll 32s linear infinite;
+      padding-left: 140px;
+    }
+    .ticker-wrap:hover .ticker-track { animation-play-state: paused; }
+    @keyframes ticker-scroll {
+      0%   { transform: translateX(0); }
+      100% { transform: translateX(-50%); }
+    }
+    .ticker-item {
+      display: flex; align-items: center; gap: 0.75rem;
+      padding: 0 2.2rem;
+      white-space: nowrap;
+    }
+    .ticker-item-icon {
+      width: 28px; height: 28px;
+      border-radius: 50%;
+      background: rgba(26,58,92,0.15);
+      border: 1.5px solid rgba(26,58,92,0.25);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 0.85rem; flex-shrink: 0;
+    }
+    .ticker-item-text {
+      font-family: 'Inter', sans-serif;
+      font-size: 0.72rem; font-weight: 500;
+      color: rgba(26,40,10,0.65);
+      letter-spacing: 0.12em; text-transform: uppercase;
+    }
+    .ticker-item-text strong {
+      color: #1a3a5c; font-weight: 800;
+      letter-spacing: 0.06em;
+    }
+    .ticker-dot {
+      width: 5px; height: 5px; border-radius: 50%;
+      background: rgba(26,58,92,0.25);
+      flex-shrink: 0;
+      margin: 0 0.3rem;
+    }
+
+    /* ── SECTIONS ── */
+    section { padding: 5rem 2rem; }
+    .container { max-width: 940px; margin: 0 auto; }
+    .section-eyebrow { font-size: 0.68rem; font-weight: 700; letter-spacing: 0.22em; text-transform: uppercase; color: var(--or); margin-bottom: 0.6rem; display: block; }
+    .section-title { font-family: 'Playfair Display', serif; font-size: clamp(1.7rem, 4vw, 2.4rem); font-weight: 700; line-height: 1.2; color: var(--noir); margin-bottom: 1rem; }
+    .section-intro { color: var(--gris); font-size: 0.97rem; line-height: 1.75; max-width: 580px; margin-bottom: 3rem; }
+    .section-divider { width: 48px; height: 3px; background: var(--or); margin: 1rem 0 2rem; border-radius: 2px; }
+
+    /* ── DOMAINES ── */
+    .domaines-section { background: var(--blanc); }
+    .domaines-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(210px, 1fr)); gap: 1.5rem; }
+    .domaine-card {
+      background: var(--gris-bg); border: 1px solid var(--border);
+      border-radius: 8px; padding: 1.8rem 1.5rem;
+      transition: box-shadow 0.2s, transform 0.2s, border-color 0.2s;
+      border-top: 3px solid transparent;
+    }
+    .domaine-card:hover { box-shadow: 0 8px 32px rgba(26,58,92,0.1); transform: translateY(-4px); border-top-color: var(--or); }
+    .domaine-icon { width: 46px; height: 46px; border-radius: 8px; background: var(--bleu); display: flex; align-items: center; justify-content: center; margin-bottom: 1.1rem; font-size: 1.3rem; }
+    .domaine-card h3 { font-weight: 700; font-size: 0.95rem; color: var(--bleu); margin-bottom: 0.5rem; line-height: 1.3; }
+    .domaine-card p { font-size: 0.82rem; color: var(--gris); line-height: 1.65; }
+
+    /* ── ACTUALITÉS ── */
+    .actu-section { background: var(--gris-bg); }
+    .actu-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 1.5rem; }
+    .actu-card {
+      background: var(--blanc); border: 1px solid var(--border);
+      border-radius: 8px; overflow: hidden;
+      transition: box-shadow 0.2s, transform 0.2s;
+    }
+    .actu-card:hover { box-shadow: 0 8px 32px rgba(26,58,92,0.1); transform: translateY(-3px); }
+    .actu-card-img { width: 100%; height: 180px; object-fit: cover; background: var(--bleu); display: block; }
+    .actu-card-img-placeholder { width: 100%; height: 180px; background: linear-gradient(135deg, var(--bleu) 0%, var(--bleu-clair) 100%); display: flex; align-items: center; justify-content: center; font-size: 2.5rem; }
+    .actu-card-body { padding: 1.4rem 1.3rem; }
+    .actu-card-date { font-size: 0.7rem; color: var(--or); font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; margin-bottom: 0.5rem; }
+    .actu-card-title { font-family: 'Playfair Display', serif; font-size: 1.05rem; color: var(--bleu); font-weight: 700; line-height: 1.3; margin-bottom: 0.6rem; }
+    .actu-card-excerpt { font-size: 0.82rem; color: var(--gris); line-height: 1.65; margin-bottom: 1rem; display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden; }
+    .actu-card-link { font-size: 0.8rem; font-weight: 600; color: var(--bleu); text-decoration: none; display: inline-flex; align-items: center; gap: 0.3rem; border-bottom: 1.5px solid var(--or); padding-bottom: 1px; cursor: pointer; background: none; border-top: none; border-left: none; border-right: none; font-family: 'Inter', sans-serif; }
+    .actu-empty { text-align: center; padding: 3rem; color: var(--gris); background: var(--blanc); border: 1px dashed var(--border); border-radius: 8px; }
+
+    /* ── MODAL ARTICLE ── */
+    .article-modal { display: none; position: fixed; inset: 0; z-index: 700; background: rgba(15,34,56,0.82); align-items: flex-start; justify-content: center; padding: 2rem 1rem; overflow-y: auto; }
+    .article-modal.open { display: flex; }
+    .article-modal-inner { background: var(--blanc); border-radius: 12px; max-width: 720px; width: 100%; margin: auto; overflow: hidden; box-shadow: 0 32px 80px rgba(0,0,0,0.35); }
+    .article-modal-img { width: 100%; height: 280px; object-fit: cover; display: block; }
+    .article-modal-body { padding: 2.2rem 2.5rem 2.5rem; }
+    .article-modal-domain { display: inline-block; font-size: 0.68rem; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; background: var(--or-pale); color: #a07830; border: 1px solid #e8d5a0; padding: 0.25rem 0.7rem; border-radius: 2rem; margin-bottom: 0.8rem; }
+    .article-modal-date { font-size: 0.75rem; color: var(--gris); font-weight: 500; margin-bottom: 0.7rem; }
+    .article-modal-title { font-family: 'Playfair Display', serif; font-size: 1.7rem; color: var(--bleu); font-weight: 900; line-height: 1.2; margin-bottom: 0.8rem; }
+    .article-modal-divider { width: 48px; height: 3px; background: var(--or); border-radius: 2px; margin-bottom: 1.4rem; }
+    .article-modal-content { font-size: 0.95rem; color: var(--noir); line-height: 1.9; }
+    .article-modal-content h2 { font-family: 'Playfair Display', serif; font-size: 1.2rem; color: var(--bleu); margin: 1rem 0 0.5rem; }
+    .article-modal-content ul, .article-modal-content ol { padding-left: 1.5rem; margin: 0.5rem 0; }
+    .article-modal-content li { margin-bottom: 0.3rem; }
+    .article-modal-rapport-badge { display:inline-block;font-size:0.72rem;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;background:#f0e8d0;color:#a07830;border:1px solid #e8d5a0;padding:0.25rem 0.8rem;border-radius:2rem;margin-bottom:0.8rem; }
+    .article-modal-close { position: absolute; top: 1rem; right: 1rem; background: rgba(0,0,0,0.4); border: none; color: white; width: 40px; height: 40px; border-radius: 50%; font-size: 1.1rem; cursor: pointer; display: flex; align-items: center; justify-content: center; transition: background 0.2s; }
+    .article-modal-close:hover { background: rgba(0,0,0,0.65); }
+
+    /* ── GALERIE ── */
+    .galerie-section { background: var(--blanc); }
+    .media-tabs { display: flex; gap: 0.5rem; margin-bottom: 2.5rem; border-bottom: 2px solid var(--border); padding-bottom: 0; }
+    .tab-btn { padding: 0.6rem 1.5rem; border: none; background: transparent; color: var(--gris); font-weight: 600; font-size: 0.85rem; cursor: pointer; border-bottom: 2px solid transparent; margin-bottom: -2px; transition: all 0.2s; font-family: 'Inter', sans-serif; }
+    .tab-btn.active { color: var(--bleu); border-bottom-color: var(--bleu); }
+    .tab-btn:hover { color: var(--bleu); }
+    .media-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 1rem; }
+    .media-item { border-radius: 6px; overflow: hidden; aspect-ratio: 4/3; position: relative; background: var(--gris-bg); cursor: pointer; }
+    .media-item img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.35s; }
+    .media-item:hover img { transform: scale(1.06); }
+    .media-item .overlay { position: absolute; inset: 0; background: rgba(26,58,92,0); display: flex; align-items: center; justify-content: center; transition: background 0.25s; }
+    .media-item:hover .overlay { background: rgba(26,58,92,0.45); }
+    .media-item .overlay span { color: white; font-size: 1.6rem; opacity: 0; transition: opacity 0.2s; }
+    .media-item:hover .overlay span { opacity: 1; }
+    .video-item { border-radius: 6px; overflow: hidden; aspect-ratio: 16/9; background: #111; }
+    .video-item video { width: 100%; height: 100%; object-fit: cover; }
+    .empty-state { text-align: center; padding: 3rem 1rem; color: var(--gris); }
+    .empty-state .icon { font-size: 2.5rem; margin-bottom: 0.75rem; opacity: 0.5; }
+    .empty-state p { font-size: 0.88rem; }
+
+    /* ── LIGHTBOX ── */
+    .lightbox { display: none; position: fixed; inset: 0; z-index: 1000; background: rgba(0,0,0,0.94); align-items: center; justify-content: center; }
+    .lightbox.open { display: flex; }
+    .lightbox img { max-width: 90vw; max-height: 88vh; border-radius: 4px; object-fit: contain; }
+    .lightbox-close { position: absolute; top: 1.2rem; right: 1.5rem; color: white; font-size: 1.5rem; cursor: pointer; background: rgba(255,255,255,0.1); border: none; width: 42px; height: 42px; border-radius: 50%; display: flex; align-items: center; justify-content: center; transition: background 0.2s; }
+    .lightbox-close:hover { background: rgba(255,255,255,0.22); }
+    .lightbox-nav { position: absolute; top: 50%; transform: translateY(-50%); color: white; font-size: 1.8rem; cursor: pointer; background: rgba(255,255,255,0.1); border: none; width: 48px; height: 48px; border-radius: 50%; display: flex; align-items: center; justify-content: center; transition: background 0.2s; }
+    .lightbox-nav:hover { background: rgba(255,255,255,0.22); }
+    .lightbox-prev { left: 1.5rem; }
+    .lightbox-next { right: 1.5rem; }
+
+    /* ── MISSION ── */
+    .mission-section { background: var(--bleu); color: white; }
+    .mission-section .section-title { color: white; }
+    .mission-section .section-intro { color: rgba(255,255,255,0.72); max-width: 660px; }
+    .mission-points { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 2rem; margin-top: 0.5rem; }
+    .mission-pt { border-left: 2px solid var(--or); padding-left: 1.2rem; }
+    .mission-pt strong { display: block; margin-bottom: 0.4rem; font-size: 0.92rem; color: white; }
+    .mission-pt p { font-size: 0.82rem; color: rgba(255,255,255,0.65); line-height: 1.65; }
+
+    /* ── CONTACT ── */
+    .contact-section { background: var(--gris-bg); }
+    #orepsa-map { width: 100%; height: 220px; border-radius: 10px; margin-top: 1.5rem; border: 1px solid var(--border); z-index: 0; }
+    .map-link-btn { display: inline-flex; align-items: center; gap: 0.5rem; margin-top: 0.85rem; background: var(--bleu); color: white; padding: 0.55rem 1.1rem; border-radius: 6px; font-size: 0.82rem; font-weight: 600; text-decoration: none; transition: background 0.2s; }
+    .map-link-btn:hover { background: var(--or); color: var(--bleu); }
+    .contact-grid { display: grid; grid-template-columns: 1fr 1.3fr; gap: 4rem; align-items: start; }
+    .contact-info h3 { font-family: 'Playfair Display', serif; font-size: 1.25rem; margin-bottom: 1.5rem; color: var(--bleu); }
+    .contact-item { display: flex; gap: 0.85rem; margin-bottom: 1.2rem; align-items: flex-start; }
+    .contact-item .ci-icon { width: 36px; height: 36px; border-radius: 6px; background: var(--bleu); color: white; display: flex; align-items: center; justify-content: center; font-size: 0.9rem; flex-shrink: 0; }
+    .contact-item div p { font-size: 0.85rem; color: var(--gris); line-height: 1.55; }
+    .contact-item div strong { font-size: 0.72rem; color: var(--bleu); display: block; margin-bottom: 0.1rem; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; }
+    .contact-form { display: flex; flex-direction: column; gap: 0.85rem; }
+    .contact-form input, .contact-form textarea {
+      width: 100%; padding: 0.75rem 1rem; border: 1.5px solid var(--border);
+      border-radius: 6px; font-family: 'Inter', sans-serif; font-size: 0.88rem;
+      background: var(--blanc); color: var(--noir); outline: none; transition: border-color 0.2s;
+    }
+    .contact-form input:focus, .contact-form textarea:focus { border-color: var(--bleu); }
+    .contact-form textarea { resize: vertical; min-height: 120px; }
+    .btn-submit { background: var(--bleu); color: white; border: none; padding: 0.8rem; border-radius: 6px; font-weight: 700; font-size: 0.88rem; cursor: pointer; transition: background 0.2s; font-family: 'Inter', sans-serif; }
+    .btn-submit:hover { background: var(--bleu-clair); }
+    .btn-submit:disabled { opacity: 0.5; cursor: not-allowed; }
+
+    /* ── AVIS ── */
+    .avis-section { background: var(--blanc); }
+    .avis-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; align-items: start; }
+    .avis-form-label { font-family: 'Playfair Display', serif; font-size: 1.1rem; color: var(--bleu); margin-bottom: 1rem; display: block; font-weight: 700; }
+    .avis-form { display: flex; flex-direction: column; gap: 0.85rem; }
+    .avis-form input, .avis-form select, .avis-form textarea {
+      width: 100%; padding: 0.7rem 1rem; border: 1.5px solid var(--border);
+      border-radius: 6px; font-family: 'Inter', sans-serif; font-size: 0.88rem;
+      background: var(--blanc); color: var(--noir); outline: none; transition: border-color 0.2s;
+    }
+    .avis-form input:focus, .avis-form select:focus, .avis-form textarea:focus { border-color: var(--bleu); }
+    .avis-form textarea { resize: vertical; min-height: 100px; }
+    .btn-avis { background: var(--bleu); color: white; border: none; padding: 0.75rem; border-radius: 6px; font-weight: 700; font-size: 0.88rem; cursor: pointer; font-family: 'Inter', sans-serif; transition: background 0.2s; }
+    .btn-avis:hover { background: var(--bleu-clair); }
+    .avis-card { background: var(--gris-bg); border: 1px solid var(--border); border-radius: 8px; padding: 1rem 1.2rem; margin-bottom: 0.75rem; }
+    .avis-card-header { display: flex; align-items: center; gap: 0.5rem; flex-wrap: wrap; margin-bottom: 0.4rem; }
+    .avis-card-name { font-weight: 700; font-size: 0.88rem; color: var(--bleu); }
+    .avis-card-stars { color: #f0c040; font-size: 0.82rem; }
+    .avis-card-date { font-size: 0.7rem; color: var(--gris); margin-left: auto; }
+    .avis-card-text { font-size: 0.84rem; color: var(--gris); line-height: 1.65; }
+
+    /* ── DOMAINES CLIQUABLES ── */
+    .domaine-card {
+      cursor: pointer;
+      position: relative;
+    }
+    .domaine-card .card-arrow {
+      position: absolute; bottom: 1.2rem; right: 1.2rem;
+      width: 28px; height: 28px; border-radius: 50%;
+      background: var(--bleu); color: white;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 0.8rem; opacity: 0;
+      transition: opacity 0.2s, transform 0.2s;
+    }
+    .domaine-card:hover .card-arrow { opacity: 1; transform: translateX(3px); }
+    .domaine-card .card-cta {
+      font-size: 0.73rem; font-weight: 600; color: var(--or);
+      letter-spacing: 0.06em; text-transform: uppercase;
+      margin-top: 1rem; display: flex; align-items: center; gap: 0.3rem;
+      transition: gap 0.2s;
+    }
+    .domaine-card:hover .card-cta { gap: 0.5rem; }
+
+    /* ── DRAWER DOMAINE ── */
+    .domain-drawer-overlay {
+      display: none; position: fixed; inset: 0; z-index: 600;
+      background: rgba(15,34,56,0.55); backdrop-filter: blur(2px);
+    }
+    .domain-drawer-overlay.open { display: block; }
+    .domain-drawer {
+      position: fixed; top: 0; right: 0; bottom: 0; z-index: 601;
+      width: min(600px, 100vw);
+      background: var(--blanc);
+      transform: translateX(100%);
+      transition: transform 0.38s cubic-bezier(0.4,0,0.2,1);
+      display: flex; flex-direction: column;
+      box-shadow: -8px 0 48px rgba(0,0,0,0.18);
+    }
+    .domain-drawer.open { transform: translateX(0); }
+
+    .drawer-header {
+      padding: 2rem 2rem 1.5rem;
+      border-bottom: 1px solid var(--border);
+      flex-shrink: 0;
+      position: relative;
+    }
+    .drawer-header-top {
+      display: flex; align-items: flex-start; justify-content: space-between; gap: 1rem;
+    }
+    .drawer-icon-wrap {
+      width: 52px; height: 52px; border-radius: 10px;
+      background: var(--bleu); display: flex; align-items: center;
+      justify-content: center; font-size: 1.5rem; flex-shrink: 0;
+    }
+    .drawer-eyebrow {
+      font-size: 0.65rem; font-weight: 700; letter-spacing: 0.2em;
+      text-transform: uppercase; color: var(--or); margin-bottom: 0.35rem; display: block;
+    }
+    .drawer-title {
+      font-family: 'Playfair Display', serif; font-size: 1.4rem;
+      font-weight: 700; color: var(--bleu); line-height: 1.2;
+    }
+    .drawer-desc {
+      font-size: 0.88rem; color: var(--gris); line-height: 1.7;
+      margin-top: 0.8rem;
+    }
+    .drawer-close {
+      width: 36px; height: 36px; border-radius: 50%; border: 1.5px solid var(--border);
+      background: white; cursor: pointer; display: flex; align-items: center;
+      justify-content: center; font-size: 1rem; color: var(--gris);
+      flex-shrink: 0; transition: background 0.15s, color 0.15s;
+    }
+    .drawer-close:hover { background: var(--bleu); color: white; border-color: var(--bleu); }
+
+    .drawer-tabs {
+      display: flex; padding: 0 2rem;
+      border-bottom: 2px solid var(--border);
+      flex-shrink: 0;
+    }
+    .drawer-tab {
+      padding: 0.8rem 0; margin-right: 2rem; border: none; background: transparent;
+      font-family: 'Inter', sans-serif; font-size: 0.84rem; font-weight: 600;
+      color: var(--gris); cursor: pointer;
+      border-bottom: 2px solid transparent; margin-bottom: -2px;
+      transition: color 0.2s, border-color 0.2s;
+    }
+    .drawer-tab.active { color: var(--bleu); border-bottom-color: var(--bleu); }
+
+    .drawer-body {
+      flex: 1; overflow-y: auto; padding: 1.8rem 2rem;
+    }
+
+    /* Articles dans le drawer */
+    .drawer-article {
+      display: flex; gap: 1rem; padding: 1rem 0;
+      border-bottom: 1px solid var(--border); cursor: pointer;
+      transition: opacity 0.15s;
+    }
+    .drawer-article:last-child { border-bottom: none; }
+    .drawer-article:hover { opacity: 0.8; }
+    .drawer-article-img {
+      width: 80px; height: 64px; border-radius: 6px;
+      object-fit: cover; flex-shrink: 0; background: var(--gris-bg);
+    }
+    .drawer-article-ph {
+      width: 80px; height: 64px; border-radius: 6px;
+      background: linear-gradient(135deg, var(--bleu), var(--bleu-clair));
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1.5rem; flex-shrink: 0;
+    }
+    .drawer-article-info { flex: 1; min-width: 0; }
+    .drawer-article-date { font-size: 0.68rem; color: var(--or); font-weight: 600; text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 0.25rem; }
+    .drawer-article-title { font-family: 'Playfair Display', serif; font-size: 0.95rem; color: var(--bleu); font-weight: 700; line-height: 1.3; margin-bottom: 0.3rem; }
+    .drawer-article-excerpt { font-size: 0.78rem; color: var(--gris); line-height: 1.55; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; }
+
+    /* Photos dans le drawer */
+    .drawer-photo-grid {
+      display: grid; grid-template-columns: repeat(auto-fill, minmax(140px, 1fr)); gap: 0.6rem;
+    }
+    .drawer-photo-item {
+      border-radius: 6px; overflow: hidden; aspect-ratio: 4/3;
+      position: relative; cursor: pointer; background: var(--gris-bg);
+    }
+    .drawer-photo-item img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.3s; }
+    .drawer-photo-item:hover img { transform: scale(1.06); }
+    .drawer-photo-item .overlay { position: absolute; inset: 0; background: rgba(26,58,92,0); display: flex; align-items: center; justify-content: center; transition: background 0.2s; }
+    .drawer-photo-item:hover .overlay { background: rgba(26,58,92,0.4); }
+    .drawer-photo-item .overlay span { color: white; font-size: 1.3rem; opacity: 0; transition: opacity 0.2s; }
+    .drawer-photo-item:hover .overlay span { opacity: 1; }
+
+    .drawer-video-item { border-radius: 6px; overflow: hidden; aspect-ratio: 16/9; background: #111; margin-bottom: 0.6rem; }
+    .drawer-video-item video { width: 100%; height: 100%; object-fit: cover; }
+
+    .drawer-empty {
+      text-align: center; padding: 3rem 1rem; color: var(--gris);
+    }
+    .drawer-empty .icon { font-size: 2.5rem; opacity: 0.35; margin-bottom: 0.75rem; }
+    .drawer-empty p { font-size: 0.85rem; }
+
+    .drawer-loading {
+      display: flex; align-items: center; justify-content: center;
+      padding: 3rem; color: var(--gris); gap: 0.75rem; font-size: 0.88rem;
+    }
+    .drawer-spinner {
+      width: 20px; height: 20px; border: 2px solid var(--border);
+      border-top-color: var(--bleu); border-radius: 50%;
+      animation: spin 0.6s linear infinite;
+    }
+    @keyframes spin { to { transform: rotate(360deg); } }
+
+    /* ── FOOTER ── */
+    footer { background: var(--bleu); color: rgba(255,255,255,0.55); padding: 2.5rem 2rem; }
+    .footer-inner { max-width: 940px; margin: 0 auto; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 1rem; }
+    .footer-brand { display: flex; align-items: center; gap: 0.75rem; }
+    .footer-brand img { width: 36px; height: 36px; border-radius: 50%; border: 1.5px solid rgba(201,168,76,0.5); }
+    .footer-brand span { font-family: 'Playfair Display', serif; font-size: 0.95rem; color: white; }
+    footer p { font-size: 0.78rem; }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 768px) {
+      .nav-links { display: none; }
+      .contact-grid { grid-template-columns: 1fr; gap: 2.5rem; }
+      .avis-grid { grid-template-columns: 1fr; gap: 2rem; }
+      .lightbox-nav { display: none; }
+      nav { padding: 0.75rem 1.2rem; }
+    }
+
+    .slogan-cycle {
+      display: inline-block;
+      opacity: 0;
+      transform: translateY(16px);
+      transition: opacity 0.8s ease, transform 0.8s ease;
+    }
+    .slogan-cycle.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    @keyframes pulse-logo {
+      0%, 100% { transform: scale(1); box-shadow: 0 0 0 0 rgba(201,168,76,0.4); }
+      50% { transform: scale(1.06); box-shadow: 0 0 0 12px rgba(201,168,76,0); }
+    }
+  </style>
+</head>
+<body>
+
+<!-- LIGHTBOX -->
+<div class="lightbox" id="lightbox" onclick="closeLightbox(event)">
+  <button class="lightbox-close" onclick="closeLightboxBtn()">✕</button>
+  <button class="lightbox-nav lightbox-prev" onclick="lightboxNav(-1)">‹</button>
+  <img id="lightbox-img" src="" alt="Photo OREPSA" />
+  <div id="lightbox-date" style="position:absolute;bottom:1rem;left:50%;transform:translateX(-50%);color:rgba(255,255,255,0.7);font-size:0.75rem;background:rgba(0,0,0,0.45);padding:0.2rem 0.8rem;border-radius:2rem;pointer-events:none;white-space:nowrap"></div>
+  <button class="lightbox-nav lightbox-next" onclick="lightboxNav(1)">›</button>
+</div>
+
+<!-- MODAL ARTICLE -->
+<div class="article-modal" id="article-modal" onclick="closeArticleModal(event)">
+  <div class="article-modal-inner" id="article-modal-inner">
+    <div style="position:relative">
+      <img id="am-img" src="" alt="" class="article-modal-img" style="display:none" />
+      <div id="am-img-placeholder" style="display:none;height:160px;background:linear-gradient(135deg,var(--bleu),var(--bleu-clair));display:none;align-items:center;justify-content:center;font-size:3rem">📰</div>
+      <button class="article-modal-close" onclick="closeArticleModalBtn()">✕</button>
+    </div>
+    <div class="article-modal-body">
+      <div id="am-rapport-badge" class="article-modal-rapport-badge" style="display:none">📄 Rapport officiel</div>
+      <div id="am-domain" class="article-modal-domain" style="display:none"></div>
+      <div class="article-modal-date" id="am-date"></div>
+      <h2 class="article-modal-title" id="am-title"></h2>
+      <div class="article-modal-divider"></div>
+      <div class="article-modal-content" id="am-content"></div>
+    </div>
+  </div>
+</div>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-logo">
+    <img src="https://res.cloudinary.com/dk3vflsiq/image/upload/v1782258625/56a04e6e-9ea7-461a-b024-f24c8a1c8301_mp5rfc.png" alt="Logo OREPSA" />
+    <div class="nav-logo-text">
+      <h1>ONG OREPSA</h1>
+      <small>Dapaong · Togo</small>
+    </div>
+  </div>
+  <ul class="nav-links">
+    <li><a href="#domaines">Domaines</a></li>
+    <li><a href="#actualites">Actualités</a></li>
+    <li><a href="#galerie">Galerie</a></li>
+    <li><a href="#mission">Vision & Mission</a></li>
+    <li><a href="#avis">Avis</a></li>
+  </ul>
+  <a href="#contact" class="nav-cta">Nous contacter</a>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-inner">
+    <img class="hero-logo" style="animation: pulse-logo 2.4s ease-in-out infinite;" src="https://res.cloudinary.com/dk3vflsiq/image/upload/v1782258625/56a04e6e-9ea7-461a-b024-f24c8a1c8301_mp5rfc.png" alt="Logo OREPSA" />
+    <div class="hero-tag">Organisation Régionale · Savanes · Togo</div>
+    <h2 id="slogan-hero">
+      <span class="slogan-cycle" id="sc-1">Agir.</span><br/>
+      <em><span class="slogan-cycle" id="sc-2">Protéger.</span></em><br/>
+      <span class="slogan-cycle" id="sc-3">Transformer.</span>
+    </h2>
+    <p>L'ONG OREPSA œuvre pour la promotion sociale et agricole des communautés vulnérables de la région des Savanes depuis Dapaong.</p>
+    <div class="hero-cta">
+      <a href="#domaines" class="btn btn-or">Nos domaines d'action</a>
+      <a href="#contact" class="btn btn-outline">Nous contacter</a>
+    </div>
+  </div>
+</section>
+<div class="or-band"></div>
+
+<!-- BANDE DÉFILANTE PRO -->
+<div class="ticker-wrap">
+  <div class="ticker-label"><img src="https://res.cloudinary.com/dk3vflsiq/image/upload/v1782258625/56a04e6e-9ea7-461a-b024-f24c8a1c8301_mp5rfc.png" alt="Logo OREPSA" style="width:28px;height:28px;border-radius:50%;object-fit:cover;margin-right:0.5rem;border:1.5px solid rgba(0,0,0,0.15);" />OREPSA</div>
+  <div class="ticker-fade-left"></div>
+  <div class="ticker-fade-right"></div>
+  <div class="ticker-track">
+    <!-- Série 1 -->
+    <div class="ticker-item">
+      <div class="ticker-item-icon">🌿</div>
+      <span class="ticker-item-text"><strong>Quatre (04)</strong> Domaines d'intervention</span>
+    </div>
+    <div class="ticker-dot"></div>
+    <div class="ticker-item">
+      <div class="ticker-item-icon">📍</div>
+      <span class="ticker-item-text">Région des <strong>Savanes</strong> — Zone d'intervention</span>
+    </div>
+    <div class="ticker-dot"></div>
+    <div class="ticker-item">
+      <div class="ticker-item-icon">🏛️</div>
+      <span class="ticker-item-text"><strong>Dapaong</strong> — Siège social</span>
+    </div>
+    <div class="ticker-dot"></div>
+    <div class="ticker-item">
+      <div class="ticker-item-icon">📅</div>
+      <span class="ticker-item-text">Fondée en <strong>1993</strong> — Plus de 30 ans d'engagement</span>
+    </div>
+    <div class="ticker-dot"></div>
+    <!-- Série 2 (copie pour boucle) -->
+    <div class="ticker-item">
+      <div class="ticker-item-icon">🌿</div>
+      <span class="ticker-item-text"><strong>Quatre (04)</strong> Domaines d'intervention</span>
+    </div>
+    <div class="ticker-dot"></div>
+    <div class="ticker-item">
+      <div class="ticker-item-icon">📍</div>
+      <span class="ticker-item-text">Région des <strong>Savanes</strong> — Zone d'intervention</span>
+    </div>
+    <div class="ticker-dot"></div>
+    <div class="ticker-item">
+      <div class="ticker-item-icon">🏛️</div>
+      <span class="ticker-item-text"><strong>Dapaong</strong> — Siège social</span>
+    </div>
+    <div class="ticker-dot"></div>
+    <div class="ticker-item">
+      <div class="ticker-item-icon">📅</div>
+      <span class="ticker-item-text">Fondée en <strong>1993</strong> — Plus de 30 ans d'engagement</span>
+    </div>
+    <div class="ticker-dot"></div>
+  </div>
+</div>
+
+<!-- DOMAINES -->
+<section class="domaines-section" id="domaines">
+  <div class="container">
+    <span class="section-eyebrow">04 Domaines d'intervention</span>
+    <h2 class="section-title">Ce que nous faisons</h2>
+    <div class="section-divider"></div>
+    <p class="section-intro">L'OREPSA intervient sur quatre axes prioritaires pour améliorer les conditions de vie des populations vulnérables de la région.</p>
+    <div class="domaines-grid">
+      <div class="domaine-card" onclick="openDomainDrawer('urgence')">
+        <div class="domaine-icon">🚨</div>
+        <h3>Secours et assistance humanitaire d'urgence</h3>
+        <p>Réponse rapide aux crises et aux déplacements de populations : aide alimentaire, abri et matériel d'urgence lors de catastrophes.</p>
+        <div class="card-cta">Voir les activités →</div>
+        <div class="card-arrow">›</div>
+      </div>
+      <div class="domaine-card" onclick="openDomainDrawer('protection')">
+        <div class="domaine-icon">🤱</div>
+        <h3>Protection de la mère et de l'enfant</h3>
+        <p>Accompagnement des femmes, des enfants et des personnes vulnérables : nutrition, santé maternelle, autonomisation économique et plaidoyer pour leurs droits.</p>
+        <div class="card-cta">Voir les activités →</div>
+        <div class="card-arrow">›</div>
+      </div>
+      <div class="domaine-card" onclick="openDomainDrawer('wash')">
+        <div class="domaine-icon">💧</div>
+        <h3>Eau, Hygiène et Assainissement (EHA/WASH)</h3>
+        <p>Accès à l'eau potable, construction de latrines et promotion des bonnes pratiques d'hygiène dans les communautés rurales et les zones de crise.</p>
+        <div class="card-cta">Voir les activités →</div>
+        <div class="card-arrow">›</div>
+      </div>
+      <div class="domaine-card" onclick="openDomainDrawer('agroecologie')">
+        <div class="domaine-icon">🌿</div>
+        <h3>Promotion des pratiques agroécologiques</h3>
+        <p>Appui à l'agriculture familiale durable, formation aux techniques agroécologiques, sécurité alimentaire et nutritionnelle des ménages vulnérables.</p>
+        <div class="card-cta">Voir les activités →</div>
+        <div class="card-arrow">›</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ACTUALITÉS -->
+<section class="actu-section" id="actualites">
+  <div class="container">
+    <span class="section-eyebrow">Vie de l'organisation</span>
+    <h2 class="section-title">Actualités & Rapports</h2>
+    <div class="section-divider"></div>
+    <p class="section-intro">Suivez nos activités sur le terrain, nos rapports d'intervention et les dernières nouvelles de l'OREPSA.</p>
+    <div class="actu-grid" id="actu-grid"></div>
+    <div class="actu-empty" id="actu-empty" style="display:none">
+      <div style="font-size:2rem;margin-bottom:0.75rem">📰</div>
+      <p>Aucune actualité publiée pour l'instant.</p>
+    </div>
+  </div>
+</section>
+
+<!-- GALERIE -->
+<section class="galerie-section" id="galerie">
+  <div class="container">
+    <span class="section-eyebrow">Médiathèque</span>
+    <h2 class="section-title">Photos & Vidéos</h2>
+    <div class="section-divider"></div>
+    <p class="section-intro">Découvrez nos actions sur le terrain à travers nos photos et vidéos publiées par l'équipe OREPSA.</p>
+    <div class="media-tabs">
+      <button class="tab-btn active" onclick="switchTab('photos', this)">📷 Photos</button>
+      <button class="tab-btn" onclick="switchTab('videos', this)">🎥 Vidéos</button>
+    </div>
+    <div id="tab-photos">
+      <div class="media-grid" id="photo-grid"></div>
+      <div class="empty-state" id="photo-empty">
+        <div class="icon">🖼️</div>
+        <p>Aucune photo pour l'instant.<br/>Les photos seront publiées prochainement.</p>
+      </div>
+    </div>
+    <div id="tab-videos" style="display:none">
+      <div class="media-grid" id="video-grid" style="grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));"></div>
+      <div class="empty-state" id="video-empty">
+        <div class="icon">🎥</div>
+        <p>Aucune vidéo pour l'instant.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- MISSION -->
+<section class="mission-section" id="mission">
+  <div class="container">
+
+    <!-- VISION -->
+    <div style="margin-bottom:3.5rem">
+      <span class="section-eyebrow" style="color:var(--or)">Notre vision</span>
+      <h2 class="section-title">Ce vers quoi nous tendons</h2>
+      <div class="section-divider"></div>
+      <p class="section-intro" style="font-size:1.05rem;line-height:1.85;max-width:780px;color:rgba(255,255,255,0.9)">
+        Contribuer à l'amélioration durable des conditions de vie des populations vulnérables à travers la promotion du développement humain, de la sécurité alimentaire et nutritionnelle, de l'accès aux services sociaux de base et de la résilience communautaire.
+      </p>
+    </div>
+
+    <!-- SÉPARATEUR -->
+    <div style="width:100%;height:1px;background:rgba(255,255,255,0.12);margin-bottom:3.5rem"></div>
+
+    <!-- MISSION -->
+    <div style="margin-bottom:3rem">
+      <span class="section-eyebrow" style="color:var(--or)">Notre mission</span>
+      <h2 class="section-title">Ce que nous faisons concrètement</h2>
+      <div class="section-divider"></div>
+      <p class="section-intro" style="font-size:1.05rem;line-height:1.85;max-width:780px;color:rgba(255,255,255,0.9)">
+        Accompagner les communautés vulnérables, particulièrement les femmes, les enfants et les personnes affectées par les crises, dans l'amélioration de leurs conditions de vie par des interventions intégrées de protection sociale, de sécurité alimentaire, de nutrition, d'eau-hygiène-assainissement et de développement économique local.
+      </p>
+    </div>
+
+    <!-- 3 PILIERS -->
+    <div class="mission-points">
+      <div class="mission-pt">
+        <strong>Ancrage local depuis 1993</strong>
+        <p>Basée à Dapaong, notre équipe connaît les réalités du terrain et agit au plus près des bénéficiaires de la région des Savanes.</p>
+      </div>
+      <div class="mission-pt">
+        <strong>Approche participative</strong>
+        <p>Les femmes, les enfants et les groupements locaux sont au cœur de chaque intervention — acteurs, pas seulement bénéficiaires.</p>
+      </div>
+      <div class="mission-pt">
+        <strong>Résilience & durabilité</strong>
+        <p>Nos interventions visent des solutions pérennes qui renforcent la résilience des ménages bien au-delà de la durée de nos projets.</p>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section class="contact-section" id="contact">
+  <div class="container">
+    <span class="section-eyebrow">Rejoignez-nous</span>
+    <h2 class="section-title">Prendre contact</h2>
+    <div class="section-divider"></div>
+    <div class="contact-grid">
+      <div class="contact-info">
+        <h3>Coordonnées</h3>
+        <div class="contact-item">
+          <div class="ci-icon">📍</div>
+          <div><strong>Siège social</strong><p>BP 265 Dapaong, Togo<br/>Région des Savanes</p></div>
+        </div>
+        <div class="contact-item">
+          <div class="ci-icon">📞</div>
+          <div><strong>Téléphone</strong><p>+228 90 16 82 36<br/>+228 98 41 87 14</p></div>
+        </div>
+        <div class="contact-item">
+          <div class="ci-icon">✉️</div>
+          <div><strong>Email</strong><p><a href="mailto:info@ong-orepsa.com" style="color:var(--bleu);text-decoration:none;border-bottom:1px solid var(--or);">info@ong-orepsa.com</a></p></div>
+        </div>
+      </div>
+      <div>
+        <div id="orepsa-map"></div>
+        <a class="map-link-btn" href="https://www.google.com/maps/search/ONG+OREPSA+Dapaong/@10.860149,0.190169,18z" target="_blank" rel="noopener">
+          🗺️ Obtenir l'itinéraire
+        </a>
+      </div>
+    </div>
+    <div class="contact-grid" style="margin-top:2.5rem">
+      <div></div>
+      <div>
+        <form class="contact-form" id="contact-form" onsubmit="handleSubmit(event)">
+          <input type="text" id="cf-name" placeholder="Votre nom complet" required />
+          <input type="email" id="cf-email" placeholder="Votre adresse email" required />
+          <input type="text" id="cf-subject" placeholder="Objet du message" />
+          <textarea id="cf-message" placeholder="Votre message…"></textarea>
+          <button type="submit" class="btn-submit" id="cf-btn">Envoyer le message →</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- AVIS -->
+<section class="avis-section" id="avis">
+  <div class="container">
+    <span class="section-eyebrow">Communauté</span>
+    <h2 class="section-title">Avis & Témoignages</h2>
+    <div class="section-divider"></div>
+    <div class="avis-grid">
+      <div>
+        <span class="avis-form-label">Laisser un témoignage</span>
+        <form class="avis-form" id="comment-form" onsubmit="handleCommentSubmit(event)">
+          <input type="text" id="com-name" placeholder="Votre nom" required />
+          <select id="com-rating">
+            <option value="5">⭐⭐⭐⭐⭐ Excellent</option>
+            <option value="4">⭐⭐⭐⭐ Très bien</option>
+            <option value="3">⭐⭐⭐ Bien</option>
+            <option value="2">⭐⭐ Passable</option>
+            <option value="1">⭐ Insuffisant</option>
+          </select>
+          <textarea id="com-text" placeholder="Votre témoignage…" required></textarea>
+          <button type="submit" id="com-btn" class="btn-avis">Soumettre mon témoignage</button>
+        </form>
+      </div>
+      <div>
+        <span class="avis-form-label">Témoignages publiés</span>
+        <div id="comments-section">
+          <p style="color:var(--gris);font-size:0.85rem">Chargement…</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- DRAWER DOMAINE -->
+<div class="domain-drawer-overlay" id="drawer-overlay" onclick="closeDomainDrawer()"></div>
+<div class="domain-drawer" id="domain-drawer">
+  <div class="drawer-header">
+    <div class="drawer-header-top">
+      <div style="display:flex;align-items:flex-start;gap:1rem;flex:1;min-width:0">
+        <div class="drawer-icon-wrap" id="drawer-icon">🚨</div>
+        <div style="flex:1;min-width:0">
+          <span class="drawer-eyebrow">Domaine d'intervention</span>
+          <div class="drawer-title" id="drawer-title">—</div>
+        </div>
+      </div>
+      <button class="drawer-close" onclick="closeDomainDrawer()">✕</button>
+    </div>
+    <p class="drawer-desc" id="drawer-desc"></p>
+  </div>
+  <div class="drawer-tabs">
+    <button class="drawer-tab active" id="dtab-articles" onclick="switchDrawerTab('articles')">📰 Actualités</button>
+    <button class="drawer-tab" id="dtab-photos" onclick="switchDrawerTab('photos')">📷 Photos</button>
+    <button class="drawer-tab" id="dtab-videos" onclick="switchDrawerTab('videos')">🎥 Vidéos</button>
+  </div>
+  <div class="drawer-body" id="drawer-body">
+    <div class="drawer-loading"><div class="drawer-spinner"></div> Chargement…</div>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-brand">
+      <img src="https://res.cloudinary.com/dk3vflsiq/image/upload/v1782258625/56a04e6e-9ea7-461a-b024-f24c8a1c8301_mp5rfc.png" alt="Logo" />
+      <span>ONG OREPSA</span>
+    </div>
+    <p>BP 265 Dapaong, Togo &nbsp;·&nbsp; <a href="mailto:info@ong-orepsa.com" style="color:rgba(255,255,255,0.55);text-decoration:none;border-bottom:1px solid rgba(201,168,76,0.4);">info@ong-orepsa.com</a></p>
+    <p>© 2026 OREPSA — Tous droits réservés</p>
+  </div>
+</footer>
+
+<!-- Firebase SDK -->
+<script type="module">
+import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js";
+import {
+  getFirestore, collection, addDoc, onSnapshot,
+  query, where, orderBy, serverTimestamp
+} from "https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore.js";
+
+const firebaseConfig = {
+  apiKey: "AIzaSyCI0Yms7Y8OxBHVKIe-Lpng_DKsvqGZ0Ho",
+  authDomain: "orepsa.firebaseapp.com",
+  projectId: "orepsa",
+  storageBucket: "orepsa.firebasestorage.app",
+  messagingSenderId: "947815309958",
+  appId: "1:947815309958:web:a2383c1c93b42736d3a707"
+};
+
+const app = initializeApp(firebaseConfig);
+const db = getFirestore(app);
+
+let photos = [], videos = [], articles = [], currentPhotoIndex = 0;
+
+// ─── CONFIG DOMAINES ─────────────────────────────
+const DOMAINES = {
+  urgence: {
+    icon: '🚨',
+    title: 'Secours et assistance humanitaire d\'urgence',
+    desc: 'Réponse rapide aux crises, aux déplacements de populations et aux catastrophes naturelles. Nous intervenons avec de l\'aide alimentaire, des abris d\'urgence et du matériel de première nécessité pour les familles affectées.'
+  },
+  protection: {
+    icon: '🤱',
+    title: 'Protection de la mère et de l\'enfant',
+    desc: 'Accompagnement des femmes, des enfants et des personnes vulnérables à travers des programmes de nutrition, de santé maternelle, d\'autonomisation économique et de plaidoyer pour leurs droits fondamentaux.'
+  },
+  wash: {
+    icon: '💧',
+    title: 'Eau, Hygiène et Assainissement (EHA/WASH)',
+    desc: 'Amélioration de l\'accès à l\'eau potable, construction de latrines et promotion des bonnes pratiques d\'hygiène dans les communautés rurales et les zones de déplacement de la région des Savanes.'
+  },
+  agroecologie: {
+    icon: '🌿',
+    title: 'Promotion des pratiques agroécologiques',
+    desc: 'Appui à l\'agriculture familiale durable, formation aux techniques agroécologiques, renforcement de la sécurité alimentaire et nutritionnelle des ménages vulnérables de la région.'
+  }
+};
+
+let currentDomain = null, currentDrawerTab = 'articles';
+let domainArticles = [], domainPhotos = [], domainVideos = [];
+let drawerArticleUnsub = null, drawerPhotoUnsub = null, drawerVideoUnsub = null;
+
+function openDomainDrawer(domain) {
+  currentDomain = domain;
+  currentDrawerTab = 'articles';
+  const d = DOMAINES[domain];
+  document.getElementById('drawer-icon').textContent = d.icon;
+  document.getElementById('drawer-title').textContent = d.title;
+  document.getElementById('drawer-desc').textContent = d.desc;
+  document.getElementById('drawer-overlay').classList.add('open');
+  document.getElementById('domain-drawer').classList.add('open');
+  document.body.style.overflow = 'hidden';
+  document.querySelectorAll('.drawer-tab').forEach(t => t.classList.remove('active'));
+  document.getElementById('dtab-articles').classList.add('active');
+  loadDrawerData(domain);
+}
+
+function closeDomainDrawer() {
+  document.getElementById('drawer-overlay').classList.remove('open');
+  document.getElementById('domain-drawer').classList.remove('open');
+  document.body.style.overflow = '';
+  if (drawerArticleUnsub) { drawerArticleUnsub(); drawerArticleUnsub = null; }
+  if (drawerPhotoUnsub)   { drawerPhotoUnsub();   drawerPhotoUnsub = null; }
+  if (drawerVideoUnsub)   { drawerVideoUnsub();   drawerVideoUnsub = null; }
+  domainArticles = []; domainPhotos = []; domainVideos = [];
+}
+
+function loadDrawerData(domain) {
+  document.getElementById('drawer-body').innerHTML = '<div class="drawer-loading"><div class="drawer-spinner"></div> Chargement…</div>';
+  if (drawerArticleUnsub) drawerArticleUnsub();
+  drawerArticleUnsub = onSnapshot(
+    query(collection(db,'articles'), where('published','==',true), where('domain','==',domain), orderBy('createdAt','desc')),
+    snap => { domainArticles = snap.docs.map(d=>({id:d.id,...d.data()})); if(currentDrawerTab==='articles') renderDrawerArticles(); },
+    err => { if(err.code==='failed-precondition') { domainArticles=[]; if(currentDrawerTab==='articles') renderDrawerArticles(); } }
+  );
+  if (drawerPhotoUnsub) drawerPhotoUnsub();
+  drawerPhotoUnsub = onSnapshot(
+    query(collection(db,'photos'), where('published','==',true), where('domain','==',domain), orderBy('createdAt','desc')),
+    snap => { domainPhotos = snap.docs.map(d=>({id:d.id,...d.data()})); if(currentDrawerTab==='photos') renderDrawerPhotos(); },
+    err => { if(err.code==='failed-precondition') { domainPhotos=[]; if(currentDrawerTab==='photos') renderDrawerPhotos(); } }
+  );
+  if (drawerVideoUnsub) drawerVideoUnsub();
+  drawerVideoUnsub = onSnapshot(
+    query(collection(db,'videos'), where('published','==',true), where('domain','==',domain), orderBy('createdAt','desc')),
+    snap => { domainVideos = snap.docs.map(d=>({id:d.id,...d.data()})); if(currentDrawerTab==='videos') renderDrawerVideos(); },
+    err => { if(err.code==='failed-precondition') { domainVideos=[]; if(currentDrawerTab==='videos') renderDrawerVideos(); } }
+  );
+}
+
+function switchDrawerTab(tab) {
+  currentDrawerTab = tab;
+  document.querySelectorAll('.drawer-tab').forEach(t => t.classList.remove('active'));
+  document.getElementById('dtab-'+tab).classList.add('active');
+  if (tab==='articles') renderDrawerArticles();
+  else if (tab==='photos') renderDrawerPhotos();
+  else if (tab==='videos') renderDrawerVideos();
+}
+
+function renderDrawerArticles() {
+  const body = document.getElementById('drawer-body');
+  if (!domainArticles.length) { body.innerHTML='<div class="drawer-empty"><div class="icon">📰</div><p>Aucune actualité publiée<br/>pour ce domaine pour l\'instant.</p></div>'; return; }
+  body.innerHTML = domainArticles.map(a => {
+    const date = a.createdAt?.toDate ? a.createdAt.toDate() : new Date();
+    const imgHTML = a.coverUrl ? `<img class="drawer-article-img" src="${a.coverUrl}" alt="${esc(a.title)}" />` : `<div class="drawer-article-ph">📰</div>`;
+    return `<div class="drawer-article" onclick="openArticle('${a.id}')">
+      ${imgHTML}
+      <div class="drawer-article-info">
+        <div class="drawer-article-date">${date.toLocaleDateString('fr-FR',{day:'numeric',month:'long',year:'numeric'})}</div>
+        <div class="drawer-article-title">${esc(a.title)}</div>
+        <div class="drawer-article-excerpt">${esc(a.excerpt||a.content?.substring(0,120)||'')}</div>
+      </div>
+    </div>`;
+  }).join('');
+}
+
+function renderDrawerPhotos() {
+  const body = document.getElementById('drawer-body');
+  if (!domainPhotos.length) { body.innerHTML='<div class="drawer-empty"><div class="icon">🖼️</div><p>Aucune photo publiée<br/>pour ce domaine pour l\'instant.</p></div>'; return; }
+  window._drawerPhotos = domainPhotos;
+  body.innerHTML = `<div class="drawer-photo-grid">` +
+    domainPhotos.map((p,i) => `<div class="drawer-photo-item" onclick="openDrawerLightbox(${i})">
+      <img src="${p.src}" alt="${esc(p.caption||p.name)}" loading="lazy"/>
+      <div class="overlay"><span>🔍</span></div>
+    </div>`).join('') + `</div>`;
+}
+
+function renderDrawerVideos() {
+  const body = document.getElementById('drawer-body');
+  if (!domainVideos.length) { body.innerHTML='<div class="drawer-empty"><div class="icon">🎥</div><p>Aucune vidéo publiée<br/>pour ce domaine pour l\'instant.</p></div>'; return; }
+  body.innerHTML = domainVideos.map(v=>`<div class="drawer-video-item"><video controls preload="metadata" src="${v.src}"></video></div>`).join('');
+}
+
+function openDrawerLightbox(i) {
+  const p = (window._drawerPhotos||[])[i];
+  if (!p) return;
+  currentPhotoIndex = i;
+  document.getElementById('lightbox-img').src = p.src;
+  window._lightboxMode = 'drawer';
+  document.getElementById('lightbox').classList.add('open');
+}
+
+document.addEventListener('keydown', e => {
+  if (e.key === 'Escape' && document.getElementById('domain-drawer').classList.contains('open')) closeDomainDrawer();
+});
+
+// ─── PHOTOS ──────────────────────────────────────
+onSnapshot(
+  query(collection(db, 'photos'), where('published', '==', true), orderBy('createdAt', 'desc')),
+  snap => { photos = snap.docs.map(d => ({ id: d.id, ...d.data() })); renderPhotos(); },
+  err => console.error('PHOTOS:', err.message)
+);
+
+// ─── VIDEOS ──────────────────────────────────────
+onSnapshot(
+  query(collection(db, 'videos'), where('published', '==', true), orderBy('createdAt', 'desc')),
+  snap => { videos = snap.docs.map(d => ({ id: d.id, ...d.data() })); renderVideos(); },
+  err => console.error('VIDEOS:', err.message)
+);
+
+// ─── ARTICLES ────────────────────────────────────
+onSnapshot(
+  query(collection(db, 'articles'), where('published', '==', true), orderBy('createdAt', 'desc')),
+  snap => { articles = snap.docs.map(d => ({ id: d.id, ...d.data() })); renderArticles(); },
+  err => console.error('ARTICLES:', err.message)
+);
+
+// ─── COMMENTAIRES ────────────────────────────────
+onSnapshot(
+  query(collection(db, 'comments'), where('status', '==', 'approuve'), orderBy('date', 'desc')),
+  snap => { renderComments(snap.docs.map(d => ({ id: d.id, ...d.data() }))); },
+  err => console.error('COMMENTS:', err.message)
+);
+
+// ─── RENDER PHOTOS ───────────────────────────────
+function renderPhotos() {
+  const grid = document.getElementById('photo-grid');
+  const empty = document.getElementById('photo-empty');
+  if (photos.length === 0) { grid.innerHTML = ''; empty.style.display = ''; return; }
+  empty.style.display = 'none';
+  grid.innerHTML = photos.map((p, i) => `
+    <div class="media-item" onclick="openLightbox(${i})">
+      <img src="${p.src}" alt="${esc(p.caption || p.name)}" loading="lazy" />
+      <div class="overlay"><span>🔍</span></div>
+    </div>`).join('');
+}
+
+// ─── RENDER VIDEOS ───────────────────────────────
+function renderVideos() {
+  const grid = document.getElementById('video-grid');
+  const empty = document.getElementById('video-empty');
+  if (videos.length === 0) { grid.innerHTML = ''; empty.style.display = ''; return; }
+  empty.style.display = 'none';
+  grid.innerHTML = videos.map(v => `
+    <div class="video-item">
+      <video controls preload="metadata" src="${v.src}"></video>
+    </div>`).join('');
+}
+
+// ─── RENDER ARTICLES ─────────────────────────────
+function renderArticles() {
+  const grid = document.getElementById('actu-grid');
+  const empty = document.getElementById('actu-empty');
+  if (articles.length === 0) { grid.innerHTML = ''; empty.style.display = ''; return; }
+  empty.style.display = 'none';
+  grid.innerHTML = articles.map(a => {
+    const date = a.createdAt?.toDate ? a.createdAt.toDate() : new Date(a.createdAt);
+    const dateStr = date.toLocaleDateString('fr-FR', { day: 'numeric', month: 'long', year: 'numeric' }) + ' à ' + date.toLocaleTimeString('fr-FR', { hour: '2-digit', minute: '2-digit' });
+    const isRapport = a.type === 'rapport';
+    const imgHTML = a.coverUrl
+      ? `<img class="actu-card-img" src="${a.coverUrl}" alt="${esc(a.title)}" />`
+      : `<div class="actu-card-img-placeholder">${isRapport ? '📄' : '📰'}</div>`;
+    const badge = isRapport
+      ? `<span style="display:inline-block;font-size:0.65rem;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;background:#f0e8d0;color:#a07830;border:1px solid #e8d5a0;padding:0.2rem 0.6rem;border-radius:2rem;margin-bottom:0.5rem">📄 Rapport officiel</span>`
+      : '';
+    const action = isRapport && a.pdfUrl
+      ? `<button class="actu-card-link actu-dl-btn" data-pdf-url="${a.pdfUrl}" data-pdf-name="${esc(a.pdfFilename||'rapport.pdf')}">📄 Télécharger le rapport ↓</button>`
+      : `<button class="actu-card-link" onclick="openArticle('${a.id}')">Lire l'article →</button>`;
+    return `
+      <div class="actu-card">
+        ${imgHTML}
+        <div class="actu-card-body">
+          ${badge}
+          <div class="actu-card-date">${dateStr}</div>
+          <div class="actu-card-title">${esc(a.title)}</div>
+          <div class="actu-card-excerpt">${esc(a.excerpt || a.content?.substring(0, 160) || '')}</div>
+          ${action}
+        </div>
+      </div>`;
+  }).join('');
+}
+
+// ─── TÉLÉCHARGEMENT RAPPORTS (délégation d'événement) ──────────
+document.addEventListener('click', function(e) {
+  const btn = e.target.closest('.actu-dl-btn');
+  if (!btn) return;
+  e.preventDefault();
+  e.stopPropagation();
+  const url = btn.getAttribute('data-pdf-url');
+  const name = btn.getAttribute('data-pdf-name') || 'rapport.pdf';
+  downloadRapport(url, name, btn);
+});
+
+// ─── RENDER COMMENTAIRES ─────────────────────────
+function renderComments(comments) {
+  const section = document.getElementById('comments-section');
+  if (!section) return;
+  if (comments.length === 0) {
+    section.innerHTML = '<p style="color:var(--gris);font-size:0.85rem">Aucun témoignage publié pour l\'instant.</p>';
+    return;
+  }
+  section.innerHTML = comments.map(c => {
+    const stars = '★'.repeat(c.rating || 0) + '☆'.repeat(5 - (c.rating || 0));
+    const date = c.date?.toDate ? c.date.toDate() : new Date(c.date);
+    return `
+      <div class="avis-card">
+        <div class="avis-card-header">
+          <span class="avis-card-name">${esc(c.name)}</span>
+          <span class="avis-card-stars">${stars}</span>
+          <span class="avis-card-date">${date.toLocaleDateString('fr-FR')}</span>
+        </div>
+        <p class="avis-card-text">${esc(c.text)}</p>
+      </div>`;
+  }).join('');
+}
+
+// ─── ARTICLE MODAL ───────────────────────────────
+const DOMAINE_LABELS = {
+  urgence: '🚨 Secours & Urgence',
+  protection: '🤱 Protection Mère & Enfant',
+  wash: '💧 EHA / WASH',
+  agroecologie: '🌿 Agroécologie'
+};
+
+function openArticle(id) {
+  // Cherche dans articles globaux ET dans domainArticles (drawer)
+  const a = articles.find(x => x.id === id) || domainArticles.find(x => x.id === id);
+  if (!a) return;
+
+  const date = a.createdAt?.toDate ? a.createdAt.toDate() : new Date(a.createdAt || Date.now());
+  document.getElementById('am-date').textContent = date.toLocaleDateString('fr-FR', { weekday: 'long', day: 'numeric', month: 'long', year: 'numeric' });
+  document.getElementById('am-title').textContent = a.title;
+  // Contenu HTML riche ou texte simple
+  const contentEl = document.getElementById('am-content');
+  if (a.content && a.content.includes('<')) {
+    contentEl.innerHTML = a.content;
+  } else {
+    contentEl.textContent = a.content || '';
+  }
+  // Bouton PDF si rapport
+  let pdfBtn = document.getElementById('am-pdf-btn');
+  if (!pdfBtn) {
+    pdfBtn = document.createElement('a');
+    pdfBtn.id = 'am-pdf-btn';
+    pdfBtn.target = '_blank';
+    pdfBtn.style.cssText = 'display:inline-flex;align-items:center;gap:0.5rem;margin-top:1.5rem;padding:0.75rem 1.5rem;background:var(--or);color:white;border-radius:8px;text-decoration:none;font-weight:700;font-size:0.9rem';
+    contentEl.parentNode.appendChild(pdfBtn);
+  }
+  if (a.type === 'rapport' && a.pdfUrl) {
+    pdfBtn.href = '#';
+    pdfBtn.onclick = function(e) { e.preventDefault(); downloadRapport(a.pdfUrl, a.pdfFilename || 'rapport.pdf', pdfBtn); };
+    pdfBtn.innerHTML = '📄 Télécharger le rapport PDF';
+    pdfBtn.style.display = 'inline-flex';
+  } else {
+    pdfBtn.style.display = 'none';
+    pdfBtn.onclick = null;
+  }
+
+  // Badge rapport
+  const rapportBadge = document.getElementById('am-rapport-badge');
+  if (rapportBadge) rapportBadge.style.display = a.type === 'rapport' ? 'inline-block' : 'none';
+
+  // Badge domaine
+  const domEl = document.getElementById('am-domain');
+  if (a.domain && DOMAINE_LABELS[a.domain]) {
+    domEl.textContent = DOMAINE_LABELS[a.domain];
+    domEl.style.display = 'inline-block';
+  } else {
+    domEl.style.display = 'none';
+  }
+
+  // Image de couverture
+  const img = document.getElementById('am-img');
+  const ph = document.getElementById('am-img-placeholder');
+  if (a.coverUrl) {
+    img.src = a.coverUrl;
+    img.style.display = 'block';
+    if (ph) ph.style.display = 'none';
+  } else {
+    img.style.display = 'none';
+    if (ph) ph.style.display = 'flex';
+  }
+
+  document.getElementById('article-modal').classList.add('open');
+  document.body.style.overflow = 'hidden';
+  // Scroll en haut de la modal
+  document.getElementById('article-modal').scrollTop = 0;
+}
+
+function closeArticleModalBtn() {
+  document.getElementById('article-modal').classList.remove('open');
+  document.body.style.overflow = '';
+}
+function closeArticleModal(e) { if (e.target === document.getElementById('article-modal')) closeArticleModalBtn(); }
+
+// ─── LIGHTBOX ────────────────────────────────────
+function openLightbox(i) {
+  currentPhotoIndex = i;
+  const p = photos[i];
+  document.getElementById('lightbox-img').src = p.src;
+  const dateEl = document.getElementById('lightbox-date');
+  if (dateEl) {
+    const d = p.createdAt?.toDate ? p.createdAt.toDate() : null;
+    dateEl.textContent = d ? d.toLocaleDateString('fr-FR',{day:'numeric',month:'long',year:'numeric'}) + ' à ' + d.toLocaleTimeString('fr-FR',{hour:'2-digit',minute:'2-digit'}) : '';
+  }
+  document.getElementById('lightbox').classList.add('open');
+}
+function closeLightboxBtn() { document.getElementById('lightbox').classList.remove('open'); }
+function closeLightbox(e) { if (e.target === document.getElementById('lightbox')) closeLightboxBtn(); }
+function lightboxNav(dir) {
+  currentPhotoIndex = (currentPhotoIndex + dir + photos.length) % photos.length;
+  const p = photos[currentPhotoIndex];
+  document.getElementById('lightbox-img').src = p.src;
+  const dateEl = document.getElementById('lightbox-date');
+  if (dateEl) {
+    const d = p.createdAt?.toDate ? p.createdAt.toDate() : null;
+    dateEl.textContent = d ? d.toLocaleDateString('fr-FR',{day:'numeric',month:'long',year:'numeric'}) + ' à ' + d.toLocaleTimeString('fr-FR',{hour:'2-digit',minute:'2-digit'}) : '';
+  }
+}
+document.addEventListener('keydown', e => {
+  if (!document.getElementById('lightbox').classList.contains('open')) return;
+  if (e.key === 'Escape') closeLightboxBtn();
+  if (e.key === 'ArrowRight') lightboxNav(1);
+  if (e.key === 'ArrowLeft') lightboxNav(-1);
+});
+
+// ─── TABS ────────────────────────────────────────
+function switchTab(tab, el) {
+  document.getElementById('tab-photos').style.display = tab === 'photos' ? '' : 'none';
+  document.getElementById('tab-videos').style.display = tab === 'videos' ? '' : 'none';
+  document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+  if (el) el.classList.add('active');
+}
+
+// ─── CONTACT ─────────────────────────────────────
+async function handleSubmit(e) {
+  e.preventDefault();
+  const btn = document.getElementById('cf-btn');
+  btn.disabled = true; btn.textContent = 'Envoi en cours…';
+  try {
+    await addDoc(collection(db, 'messages'), {
+      name: document.getElementById('cf-name').value.trim(),
+      email: document.getElementById('cf-email').value.trim(),
+      subject: document.getElementById('cf-subject').value.trim(),
+      message: document.getElementById('cf-message').value.trim(),
+      read: false, date: serverTimestamp()
+    });
+    alert('✅ Merci pour votre message ! Nous vous répondrons dans les plus brefs délais.');
+    e.target.reset();
+  } catch(err) { alert('❌ Erreur lors de l\'envoi. Veuillez réessayer.'); }
+  btn.disabled = false; btn.textContent = 'Envoyer le message →';
+}
+
+// ─── COMMENTAIRE ─────────────────────────────────
+async function handleCommentSubmit(e) {
+  e.preventDefault();
+  const btn = document.getElementById('com-btn');
+  btn.disabled = true; btn.textContent = 'Envoi…';
+  try {
+    await addDoc(collection(db, 'comments'), {
+      name: document.getElementById('com-name').value.trim(),
+      rating: parseInt(document.getElementById('com-rating').value) || 5,
+      text: document.getElementById('com-text').value.trim(),
+      status: 'en-attente', date: serverTimestamp()
+    });
+    alert('✅ Votre témoignage a été soumis. Il sera visible après validation.');
+    e.target.reset();
+  } catch(err) { alert('❌ Erreur. Veuillez réessayer.'); }
+  btn.disabled = false; btn.textContent = 'Soumettre mon témoignage';
+}
+
+function esc(s) {
+  return String(s||'').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/\"/g,'&quot;');
+}
+
+async function downloadRapport(url, filename, btn) {
+  if (!url) return;
+  const label = btn ? btn.innerHTML : '';
+  try {
+    if (btn) { btn.innerHTML = '⏳ Téléchargement…'; btn.style.opacity = '0.7'; btn.style.pointerEvents = 'none'; }
+    const resp = await fetch(url);
+    if (!resp.ok) throw new Error('Erreur réseau');
+    const blob = await resp.blob();
+    const blobUrl = URL.createObjectURL(blob);
+    const a = document.createElement('a');
+    a.href = blobUrl;
+    a.download = filename || 'rapport.pdf';
+    document.body.appendChild(a);
+    a.click();
+    document.body.removeChild(a);
+    setTimeout(() => URL.revokeObjectURL(blobUrl), 5000);
+  } catch(e) {
+    window.open(url, '_blank');
+  } finally {
+    if (btn) { btn.innerHTML = label; btn.style.opacity = ''; btn.style.pointerEvents = ''; }
+  }
+}
+
+document.querySelectorAll('a[href^="#"]').forEach(a => {
+  a.addEventListener('click', e => {
+    e.preventDefault();
+    const t = document.querySelector(a.getAttribute('href'));
+    if (t) t.scrollIntoView({ behavior: 'smooth' });
+  });
+});
+
+window.openLightbox = openLightbox;
+window.closeLightboxBtn = closeLightboxBtn;
+window.closeLightbox = closeLightbox;
+window.lightboxNav = lightboxNav;
+window.switchTab = switchTab;
+window.handleSubmit = handleSubmit;
+window.handleCommentSubmit = handleCommentSubmit;
+window.openArticle = openArticle;
+window.downloadRapport = downloadRapport;
+window.closeArticleModalBtn = closeArticleModalBtn;
+window.closeArticleModal = closeArticleModal;
+window.openDomainDrawer = openDomainDrawer;
+window.closeDomainDrawer = closeDomainDrawer;
+window.switchDrawerTab = switchDrawerTab;
+window.openDrawerLightbox = openDrawerLightbox;
+
+// ── SLOGAN ANIMATION CYCLIQUE ──
+(function() {
+  const words = document.querySelectorAll('.slogan-cycle');
+  if (!words.length) return;
+  let step = 0;
+  // Délais entre chaque mot (ms)
+  const delays = [0, 1200, 2400];
+  // Durée totale d'un cycle complet
+  const cycleDuration = 5000;
+
+  function showCycle() {
+    // Cacher tous les mots
+    words.forEach(w => w.classList.remove('visible'));
+    // Faire apparaître chaque mot avec délai décalé
+    words.forEach((w, i) => {
+      setTimeout(() => w.classList.add('visible'), delays[i]);
+    });
+    // Relancer après cycleDuration
+    setTimeout(showCycle, cycleDuration);
+  }
+  // Démarrer après un court délai initial
+  setTimeout(showCycle, 400);
+})();
+
+</script>
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+  <script>
+    // Carte Leaflet - ONG OREPSA
+    const map = L.map('orepsa-map', { zoomControl: true, scrollWheelZoom: false }).setView([10.860149, 0.190169], 17);
+    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+      attribution: '© <a href="https://www.openstreetmap.org/">OpenStreetMap</a>',
+      maxZoom: 19
+    }).addTo(map);
+    const icon = L.divIcon({
+      html: '<div style="background:var(--bleu,#1a3a5c);width:36px;height:36px;border-radius:50% 50% 50% 0;transform:rotate(-45deg);border:3px solid white;box-shadow:0 2px 8px rgba(0,0,0,0.3)"></div>',
+      iconSize: [36, 36], iconAnchor: [18, 36], popupAnchor: [0, -38], className: ''
+    });
+    L.marker([10.860149, 0.190169], {icon})
+      .addTo(map)
+      .bindPopup('<strong style="color:#1a3a5c">ONG OREPSA</strong><br/>BP 265 Dapaong, Togo<br/><small>Région des Savanes</small>')
+      .openPopup();
+  </script>
+</body>
+</html>
