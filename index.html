@@ -1419,6 +1419,17 @@ window.openDrawerLightbox = openDrawerLightbox;
         .bindPopup('<strong style="color:#1a3a5c">ONG OREPSA</strong><br/>BP 265 Dapaong, Togo')
         .openPopup();
       setTimeout(function(){ map.invalidateSize(); }, 300);
+      setTimeout(function(){ map.invalidateSize(); }, 800);
+      setTimeout(function(){ map.invalidateSize(); }, 1500);
+      // Aussi recalculer quand la section devient visible
+      if ('IntersectionObserver' in window) {
+        var observer = new IntersectionObserver(function(entries) {
+          entries.forEach(function(entry) {
+            if (entry.isIntersecting) { map.invalidateSize(); }
+          });
+        });
+        observer.observe(mapEl);
+      }
     });
   </script>
 </body>
