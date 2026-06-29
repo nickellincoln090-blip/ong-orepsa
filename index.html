@@ -1402,19 +1402,24 @@ window.openDrawerLightbox = openDrawerLightbox;
   <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
   <script>
     // Carte Leaflet - ONG OREPSA
-    const map = L.map('orepsa-map', { zoomControl: true, scrollWheelZoom: false }).setView([10.860149, 0.190169], 17);
-    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-      attribution: '© <a href="https://www.openstreetmap.org/">OpenStreetMap</a>',
-      maxZoom: 19
-    }).addTo(map);
-    const icon = L.divIcon({
-      html: '<div style="background:var(--bleu,#1a3a5c);width:36px;height:36px;border-radius:50% 50% 50% 0;transform:rotate(-45deg);border:3px solid white;box-shadow:0 2px 8px rgba(0,0,0,0.3)"></div>',
-      iconSize: [36, 36], iconAnchor: [18, 36], popupAnchor: [0, -38], className: ''
+    window.addEventListener('load', function() {
+      var mapEl = document.getElementById('orepsa-map');
+      if (!mapEl) return;
+      var map = L.map('orepsa-map', { zoomControl: true, scrollWheelZoom: false }).setView([10.860149, 0.190169], 17);
+      L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+        attribution: '© <a href="https://www.openstreetmap.org/">OpenStreetMap</a>',
+        maxZoom: 19
+      }).addTo(map);
+      var icon = L.divIcon({
+        html: '<div style="background:#1a3a5c;width:16px;height:16px;border-radius:50%;border:3px solid white;box-shadow:0 2px 8px rgba(0,0,0,0.4)"></div>',
+        iconSize: [16, 16], iconAnchor: [8, 8], popupAnchor: [0, -12], className: ''
+      });
+      L.marker([10.860149, 0.190169], {icon})
+        .addTo(map)
+        .bindPopup('<strong style="color:#1a3a5c">ONG OREPSA</strong><br/>BP 265 Dapaong, Togo')
+        .openPopup();
+      setTimeout(function(){ map.invalidateSize(); }, 300);
     });
-    L.marker([10.860149, 0.190169], {icon})
-      .addTo(map)
-      .bindPopup('<strong style="color:#1a3a5c">ONG OREPSA</strong><br/>BP 265 Dapaong, Togo<br/><small>Région des Savanes</small>')
-      .openPopup();
   </script>
 </body>
 </html>
