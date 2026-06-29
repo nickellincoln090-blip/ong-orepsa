@@ -308,8 +308,11 @@
 
     /* ── CONTACT ── */
     .contact-section { background: var(--gris-bg); }
-    #orepsa-map { width: 100%; height: 220px; border-radius: 10px; margin-top: 1.5rem; border: 1px solid var(--border); z-index: 0; position: relative; overflow: hidden; }
-    .map-wrapper { position: relative; z-index: 0; isolation: isolate; }
+    .map-wrapper { position: relative; border-radius: 10px; overflow: hidden; margin-top: 1.5rem; border: 1px solid var(--border); }
+    .map-static { width: 100%; height: 220px; object-fit: cover; display: block; }
+    .map-overlay { position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; background: rgba(0,0,0,0.15); transition: background 0.2s; }
+    .map-overlay:hover { background: rgba(0,0,0,0.25); }
+    .map-pin { background: #1a3a5c; color: white; padding: 0.5rem 1rem; border-radius: 6px; font-size: 0.82rem; font-weight: 700; display: flex; align-items: center; gap: 0.4rem; box-shadow: 0 2px 8px rgba(0,0,0,0.3); }
     .map-link-btn { display: inline-flex; align-items: center; gap: 0.5rem; margin-top: 0.85rem; background: var(--bleu); color: white; padding: 0.55rem 1.1rem; border-radius: 6px; font-size: 0.82rem; font-weight: 600; text-decoration: none; transition: background 0.2s; width: 100%; justify-content: center; box-sizing: border-box; }
     .map-link-btn:hover { background: var(--or); color: var(--bleu); }
     .contact-grid { display: grid; grid-template-columns: 1fr 1.3fr; gap: 4rem; align-items: start; }
@@ -804,11 +807,22 @@
         </div>
       </div>
       <div>
-        <div class="map-wrapper"><div id="orepsa-map"></div>
-        <a class="map-link-btn" href="https://www.google.com/maps/search/ONG+OREPSA+Dapaong/@10.860149,0.190169,18z" target="_blank" rel="noopener">
+        <div class="map-wrapper">
+          <a href="https://www.google.com/maps/search/ONG+OREPSA+Dapaong/@10.860149,0.190169,18z" target="_blank" rel="noopener">
+            <img class="map-static"
+              src="https://staticmap.openstreetmap.de/staticmap.php?center=10.860149,0.190169&zoom=17&size=600x220&maptype=mapnik&markers=10.860149,0.190169,red-pushpin"
+              onerror="this.style.background='#e8edf2';this.alt='ONG OREPSA Dapaong - Carte indisponible'"
+              alt="Localisation ONG OREPSA Dapaong" />
+            <div class="map-overlay">
+              <div class="map-pin">📍 ONG OREPSA Dapaong</div>
+            </div>
+          </a>
+        </div>
+        <a class="map-link-btn"
+           href="https://www.google.com/maps/search/ONG+OREPSA+Dapaong/@10.860149,0.190169,18z"
+           target="_blank" rel="noopener">
           🗺️ Obtenir l'itinéraire
         </a></div>
-      </div>
     </div>
     <div class="contact-grid" style="margin-top:2.5rem">
       <div></div>
@@ -1399,38 +1413,5 @@ window.openDrawerLightbox = openDrawerLightbox;
 })();
 
 </script>
-  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
-  <script>
-    // Carte Leaflet - ONG OREPSA
-    window.addEventListener('load', function() {
-      var mapEl = document.getElementById('orepsa-map');
-      if (!mapEl) return;
-      var map = L.map('orepsa-map', { zoomControl: true, scrollWheelZoom: false }).setView([10.860149, 0.190169], 17);
-      L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-        attribution: '© <a href="https://www.openstreetmap.org/">OpenStreetMap</a>',
-        maxZoom: 19
-      }).addTo(map);
-      var icon = L.divIcon({
-        html: '<div style="background:#1a3a5c;width:16px;height:16px;border-radius:50%;border:3px solid white;box-shadow:0 2px 8px rgba(0,0,0,0.4)"></div>',
-        iconSize: [16, 16], iconAnchor: [8, 8], popupAnchor: [0, -12], className: ''
-      });
-      L.marker([10.860149, 0.190169], {icon})
-        .addTo(map)
-        .bindPopup('<strong style="color:#1a3a5c">ONG OREPSA</strong><br/>BP 265 Dapaong, Togo')
-        .openPopup();
-      setTimeout(function(){ map.invalidateSize(); }, 300);
-      setTimeout(function(){ map.invalidateSize(); }, 800);
-      setTimeout(function(){ map.invalidateSize(); }, 1500);
-      // Aussi recalculer quand la section devient visible
-      if ('IntersectionObserver' in window) {
-        var observer = new IntersectionObserver(function(entries) {
-          entries.forEach(function(entry) {
-            if (entry.isIntersecting) { map.invalidateSize(); }
-          });
-        });
-        observer.observe(mapEl);
-      }
-    });
-  </script>
 </body>
 </html>
