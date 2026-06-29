@@ -89,21 +89,78 @@
     .hero {
       background: var(--bleu);
       position: relative; overflow: hidden;
-      padding: 6rem 2rem 5rem;
-      display: flex; align-items: center; justify-content: center;
-      min-height: 85vh;
+      padding: 3rem 2rem;
+      display: flex; flex-direction: column;
+      align-items: center; justify-content: center;
+      gap: 2rem; min-height: 95vh;
     }
     .hero::before {
       content: ''; position: absolute; inset: 0;
-      background: radial-gradient(ellipse at 70% 50%, rgba(201,168,76,0.08) 0%, transparent 60%);
+      background:
+        radial-gradient(ellipse at 20% 80%, rgba(201,168,76,0.07) 0%, transparent 50%),
+        radial-gradient(ellipse at 80% 20%, rgba(201,168,76,0.05) 0%, transparent 50%);
     }
-    .hero-inner { position: relative; z-index: 1; max-width: 720px; text-align: center; color: white; }
+    .hero::after {
+      content: ''; position: absolute; inset: 0;
+      background-image:
+        linear-gradient(rgba(201,168,76,0.03) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(201,168,76,0.03) 1px, transparent 1px);
+      background-size: 60px 60px;
+    }
+    /* Orbite */
+    .orbit-scene { position: relative; z-index: 2; width: 340px; height: 340px; flex-shrink: 0; }
+    .orbit-svg { position: absolute; inset: 0; width: 100%; height: 100%; }
+    .logo-center { position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); z-index: 10; }
+    .logo-glow {
+      position: absolute; inset: -18px; border-radius: 50%;
+      background: radial-gradient(circle, rgba(201,168,76,0.22) 0%, transparent 70%);
+      animation: pulse-glow 3s ease-in-out infinite;
+    }
+    @keyframes pulse-glow {
+      0%,100%{opacity:0.6;transform:scale(1)} 50%{opacity:1;transform:scale(1.12)}
+    }
     .hero-logo {
-      width: 130px; height: 130px; border-radius: 50%;
-      border: 3px solid rgba(201,168,76,0.6);
-      object-fit: cover; margin: 0 auto 2rem; display: block;
-      box-shadow: 0 0 0 8px rgba(201,168,76,0.1);
+      width: 110px; height: 110px; border-radius: 50%;
+      object-fit: cover; display: block;
+      border: 3px solid rgba(201,168,76,0.7);
+      box-shadow: 0 0 32px rgba(201,168,76,0.25), 0 8px 24px rgba(0,0,0,0.4);
     }
+    .orbit-arm {
+      position: absolute; inset: 0;
+      animation: orbit-rotate 18s linear infinite;
+      transform-origin: center center;
+    }
+    @keyframes orbit-rotate { from{transform:rotate(0deg)} to{transform:rotate(360deg)} }
+    .orbit-node { position: absolute; width: 80px; height: 80px; transform: translate(-50%,-50%); }
+    .orbit-node:nth-child(1){top:calc(170px - 138px);left:170px;}
+    .orbit-node:nth-child(2){top:170px;left:calc(170px + 138px);}
+    .orbit-node:nth-child(3){top:calc(170px + 138px);left:170px;}
+    .orbit-node:nth-child(4){top:170px;left:calc(170px - 138px);}
+    .orbit-card {
+      width: 80px; height: 80px; border-radius: 50%;
+      overflow: hidden;
+      border: 2.5px solid rgba(201,168,76,0.6);
+      box-shadow: 0 4px 20px rgba(0,0,0,0.5), 0 0 0 4px rgba(201,168,76,0.1);
+      position: relative; cursor: pointer;
+      animation: orbit-counter 18s linear infinite;
+      transition: box-shadow 0.3s;
+    }
+    .orbit-card:hover { box-shadow: 0 6px 28px rgba(201,168,76,0.4), 0 0 0 6px rgba(201,168,76,0.2); }
+    @keyframes orbit-counter { from{transform:rotate(0deg)} to{transform:rotate(-360deg)} }
+    .orbit-photo { position: absolute; inset: 0; background-size: cover; background-position: center; transition: transform 0.4s ease; }
+    .orbit-card:hover .orbit-photo { transform: scale(1.08); }
+    .orbit-overlay {
+      position: absolute; inset: 0;
+      background: linear-gradient(160deg, rgba(201,168,76,0.15) 0%, rgba(26,58,92,0.55) 100%);
+      transition: background 0.3s;
+    }
+    .orbit-card:hover .orbit-overlay { background: linear-gradient(160deg, rgba(201,168,76,0.35) 0%, rgba(26,58,92,0.45) 100%); }
+    .orbit-info { position: absolute; inset: 0; display: flex; flex-direction: column; align-items: center; justify-content: flex-end; padding-bottom: 8px; opacity: 0; transition: opacity 0.3s; }
+    .orbit-card:hover .orbit-info { opacity: 1; }
+    .orbit-label { font-size: 0.4rem; font-weight: 800; color: white; text-transform: uppercase; letter-spacing: 0.06em; text-align: center; line-height: 1.3; max-width: 64px; text-shadow: 0 1px 4px rgba(0,0,0,0.8); }
+    .orbit-badge { position: absolute; top: 6px; right: 6px; width: 18px; height: 18px; border-radius: 50%; background: rgba(201,168,76,0.85); display: flex; align-items: center; justify-content: center; font-size: 0.55rem; box-shadow: 0 2px 6px rgba(0,0,0,0.4); }
+    /* Texte hero */
+    .hero-inner { position: relative; z-index: 2; text-align: center; max-width: 520px; color: white; }
     .hero-tag {
       display: inline-block; font-size: 0.68rem; font-weight: 600;
       letter-spacing: 0.2em; text-transform: uppercase;
@@ -512,12 +569,26 @@
     footer p { font-size: 0.78rem; }
 
     /* ── RESPONSIVE ── */
-    @media (max-width: 768px) {
+    @media (max-width: 1024px) {
       .nav-links { display: none; }
       .contact-grid { grid-template-columns: 1fr; gap: 2.5rem; }
       .avis-grid { grid-template-columns: 1fr; gap: 2rem; }
       .lightbox-nav { display: none; }
-      nav { padding: 0.75rem 1.2rem; }
+      nav {
+        padding: 0.75rem 1.2rem;
+        align-items: center;
+        min-height: unset;
+      }
+      .nav-cta {
+        white-space: nowrap;
+        flex-shrink: 0;
+        padding: 0.45rem 0.9rem;
+        font-size: 0.78rem;
+      }
+    }
+    /* Sur desktop, forcer les liens nav sur une seule ligne */
+    @media (min-width: 1025px) {
+      .nav-links a { white-space: nowrap; }
     }
 
     .slogan-cycle {
@@ -587,8 +658,67 @@
 
 <!-- HERO -->
 <section class="hero">
+
+  <!-- SCÈNE ORBITALE -->
+  <div class="orbit-scene">
+    <svg class="orbit-svg" viewBox="0 0 340 340" xmlns="http://www.w3.org/2000/svg">
+      <circle cx="170" cy="170" r="138" fill="none" stroke="rgba(201,168,76,0.1)" stroke-width="1" stroke-dasharray="5 5"/>
+      <circle cx="170" cy="170" r="95" fill="none" stroke="rgba(201,168,76,0.05)" stroke-width="1"/>
+      <line x1="170" y1="32" x2="170" y2="115" stroke="rgba(201,168,76,0.3)" stroke-width="1" stroke-dasharray="3 3"/>
+      <line x1="308" y1="170" x2="225" y2="170" stroke="rgba(201,168,76,0.3)" stroke-width="1" stroke-dasharray="3 3"/>
+      <line x1="170" y1="308" x2="170" y2="225" stroke="rgba(201,168,76,0.3)" stroke-width="1" stroke-dasharray="3 3"/>
+      <line x1="32" y1="170" x2="115" y2="170" stroke="rgba(201,168,76,0.3)" stroke-width="1" stroke-dasharray="3 3"/>
+      <circle cx="170" cy="32" r="3.5" fill="rgba(201,168,76,0.55)"/>
+      <circle cx="308" cy="170" r="3.5" fill="rgba(201,168,76,0.55)"/>
+      <circle cx="170" cy="308" r="3.5" fill="rgba(201,168,76,0.55)"/>
+      <circle cx="32" cy="170" r="3.5" fill="rgba(201,168,76,0.55)"/>
+      <circle cx="170" cy="115" r="2" fill="rgba(201,168,76,0.3)"/>
+      <circle cx="225" cy="170" r="2" fill="rgba(201,168,76,0.3)"/>
+      <circle cx="170" cy="225" r="2" fill="rgba(201,168,76,0.3)"/>
+      <circle cx="115" cy="170" r="2" fill="rgba(201,168,76,0.3)"/>
+    </svg>
+    <div class="logo-center">
+      <div class="logo-glow"></div>
+      <img class="hero-logo" style="animation: pulse-logo 2.4s ease-in-out infinite;" src="https://res.cloudinary.com/dk3vflsiq/image/upload/v1782258625/56a04e6e-9ea7-461a-b024-f24c8a1c8301_mp5rfc.png" alt="Logo OREPSA"/>
+    </div>
+    <div class="orbit-arm">
+      <div class="orbit-node">
+        <div class="orbit-card">
+          <div class="orbit-photo" style="background-image:url('https://res.cloudinary.com/dk3vflsiq/image/upload/v1782733562/African_aid_workers_distributing_food_to_villagers_in_Sahel_West_Africa_r_20260629_113317_0000_angelj.png')"></div>
+          <div class="orbit-overlay"></div>
+          <div class="orbit-badge">🚨</div>
+          <div class="orbit-info"><div class="orbit-label">Secours & Urgence</div></div>
+        </div>
+      </div>
+      <div class="orbit-node">
+        <div class="orbit-card">
+          <div class="orbit-photo" style="background-image:url('https://res.cloudinary.com/dk3vflsiq/image/upload/v1782733563/African_mother_with_baby_on_her_back_in_rural_Togo_village_warm_lighting__20260629_113724_0000_ge0afg.png')"></div>
+          <div class="orbit-overlay"></div>
+          <div class="orbit-badge">🤱</div>
+          <div class="orbit-info"><div class="orbit-label">Mère & Enfant</div></div>
+        </div>
+      </div>
+      <div class="orbit-node">
+        <div class="orbit-card">
+          <div class="orbit-photo" style="background-image:url('https://res.cloudinary.com/dk3vflsiq/image/upload/v1782733563/African_children_pumping_water_from_a_village_well_in_Savanes_region_Togo__20260629_114419_0000_pwkx45.png')"></div>
+          <div class="orbit-overlay"></div>
+          <div class="orbit-badge">💧</div>
+          <div class="orbit-info"><div class="orbit-label">EHA / WASH</div></div>
+        </div>
+      </div>
+      <div class="orbit-node">
+        <div class="orbit-card">
+          <div class="orbit-photo" style="background-image:url('https://res.cloudinary.com/dk3vflsiq/image/upload/v1782733562/African_farmer_woman_and_man_working_in_millet_field_in_northern_Togo_savan_20260629_114147_0000_ymysdm.png')"></div>
+          <div class="orbit-overlay"></div>
+          <div class="orbit-badge">🌿</div>
+          <div class="orbit-info"><div class="orbit-label">Agroécologie</div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- TEXTE -->
   <div class="hero-inner">
-    <img class="hero-logo" style="animation: pulse-logo 2.4s ease-in-out infinite;" src="https://res.cloudinary.com/dk3vflsiq/image/upload/v1782258625/56a04e6e-9ea7-461a-b024-f24c8a1c8301_mp5rfc.png" alt="Logo OREPSA" />
     <div class="hero-tag">Organisation Régionale · Savanes · Togo</div>
     <h2 id="slogan-hero">
       <span class="slogan-cycle" id="sc-1">Agir.</span><br/>
@@ -601,6 +731,7 @@
       <a href="#contact" class="btn btn-outline">Nous contacter</a>
     </div>
   </div>
+
 </section>
 <div class="or-band"></div>
 
