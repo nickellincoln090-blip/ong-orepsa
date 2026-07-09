@@ -107,27 +107,85 @@
         linear-gradient(90deg, rgba(201,168,76,0.03) 1px, transparent 1px);
       background-size: 60px 60px;
     }
+    /* Photos de fond — fondu-enchaîné (une image remplace l'autre, un seul mouvement) */
+    .hero-bg-photos { position: absolute; inset: 0; z-index: 1; pointer-events: none; }
+    .hero-bg-photo { position: absolute; border-radius: 50%; --stagger: 0s; }
+    .hero-bg-photo .bg-layer {
+      position: absolute; inset: 0; border-radius: 50%;
+      background-size: cover; background-position: center;
+      filter: grayscale(10%) brightness(0.78) saturate(1.2) contrast(1.05);
+      -webkit-mask-image: radial-gradient(circle, rgba(0,0,0,0.95) 0%, rgba(0,0,0,0.95) 40%, rgba(0,0,0,0.5) 65%, transparent 85%);
+      mask-image: radial-gradient(circle, rgba(0,0,0,0.95) 0%, rgba(0,0,0,0.95) 40%, rgba(0,0,0,0.5) 65%, transparent 85%);
+      opacity: 0;
+      animation: bg-crossfade 32s ease-in-out infinite;
+    }
+    @keyframes bg-crossfade {
+      0%   { opacity: 0; }
+      4%   { opacity: 0.82; }
+      21%  { opacity: 0.82; }
+      25%  { opacity: 0; }
+      100% { opacity: 0; }
+    }
+    .hero-bg-photo .bg-layer:nth-child(1) { animation-delay: calc(0s + var(--stagger)); }
+    .hero-bg-photo .bg-layer:nth-child(2) { animation-delay: calc(-8s + var(--stagger)); }
+    .hero-bg-photo .bg-layer:nth-child(3) { animation-delay: calc(-16s + var(--stagger)); }
+    .hero-bg-photo .bg-layer:nth-child(4) { animation-delay: calc(-24s + var(--stagger)); }
+    .hero-bg-photo.p1 { width: 560px; height: 560px; top: -190px; left: -210px; --stagger: 0s; }
+    .hero-bg-photo.p2 { width: 500px; height: 500px; top: -140px; right: -190px; --stagger: -2s; }
+    .hero-bg-photo.p3 { width: 540px; height: 540px; bottom: -200px; left: -180px; --stagger: -4s; }
+    .hero-bg-photo.p4 { width: 520px; height: 520px; bottom: -150px; right: -210px; --stagger: -6s; }
+    @media (prefers-reduced-motion: reduce) {
+      .hero-bg-photo .bg-layer { animation: none; }
+      .hero-bg-photo .bg-layer:first-child { opacity: 0.82; }
+    }
+    @media (max-width: 640px) {
+      .hero-bg-photo.p1, .hero-bg-photo.p2, .hero-bg-photo.p3, .hero-bg-photo.p4 { width: 380px; height: 380px; }
+    }
+
     /* Orbite */
     .orbit-scene { position: relative; z-index: 2; width: 340px; height: 340px; flex-shrink: 0; }
     .orbit-svg { position: absolute; inset: 0; width: 100%; height: 100%; }
     .logo-center { position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); z-index: 10; }
     .logo-glow {
-      position: absolute; inset: -18px; border-radius: 50%;
-      background: radial-gradient(circle, rgba(201,168,76,0.22) 0%, transparent 70%);
-      animation: pulse-glow 3s ease-in-out infinite;
+      position: absolute; inset: -32px; border-radius: 50%;
+      background: radial-gradient(circle, rgba(201,168,76,0.25) 0%, transparent 70%);
+      animation: pulse-glow 5s ease-in-out infinite;
     }
     @keyframes pulse-glow {
-      0%,100%{opacity:0.6;transform:scale(1)} 50%{opacity:1;transform:scale(1.12)}
+      0%,100%{opacity:0.6;transform:scale(1)} 50%{opacity:0.85;transform:scale(1.05)}
     }
     .hero-logo {
-      width: 110px; height: 110px; border-radius: 50%;
+      width: 210px; height: 210px; border-radius: 50%;
       object-fit: cover; display: block;
-      border: 3px solid rgba(201,168,76,0.7);
-      box-shadow: 0 0 32px rgba(201,168,76,0.25), 0 8px 24px rgba(0,0,0,0.4);
+      border: 4px solid rgba(201,168,76,0.7);
+      box-shadow: 0 0 50px rgba(201,168,76,0.35), 0 10px 32px rgba(0,0,0,0.45);
+    }
+    /* Anneau de définition rotatif (dans le liseré blanc du logo) */
+    .logo-ring-text {
+      position: absolute; inset: 0;
+      pointer-events: none;
+      animation: spin-ring-text 42s linear infinite;
+      transform-origin: 50% 50%;
+      z-index: 11;
+    }
+    .logo-ring-text text {
+      font-family: 'Inter', sans-serif;
+      font-size: 8.3px;
+      font-weight: 700;
+      letter-spacing: 0.4px;
+      fill: #8a6d1f;
+      text-transform: uppercase;
+    }
+    @keyframes spin-ring-text {
+      from { transform: rotate(0deg); }
+      to { transform: rotate(360deg); }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      .logo-ring-text { animation: none; }
     }
     .orbit-arm {
       position: absolute; inset: 0;
-      animation: orbit-rotate 18s linear infinite;
+      animation: orbit-rotate 50s linear infinite;
       transform-origin: center center;
     }
     @keyframes orbit-rotate { from{transform:rotate(0deg)} to{transform:rotate(360deg)} }
@@ -139,19 +197,29 @@
     .orbit-card {
       width: 80px; height: 80px; border-radius: 50%;
       overflow: hidden;
-      border: 2.5px solid rgba(201,168,76,0.6);
-      box-shadow: 0 4px 20px rgba(0,0,0,0.5), 0 0 0 4px rgba(201,168,76,0.1);
+      border: none;
+      box-shadow: 0 0 0 1px rgba(201,168,76,0.25), 0 10px 30px rgba(0,0,0,0.4);
       position: relative; cursor: pointer;
-      animation: orbit-counter 18s linear infinite;
+      animation: orbit-counter 50s linear infinite;
       transition: box-shadow 0.3s;
     }
-    .orbit-card:hover { box-shadow: 0 6px 28px rgba(201,168,76,0.4), 0 0 0 6px rgba(201,168,76,0.2); }
+    .orbit-card::after {
+      content: ''; position: absolute; inset: -1px; border-radius: 50%;
+      box-shadow: inset 0 0 18px 10px var(--bleu);
+      pointer-events: none;
+    }
+    .orbit-card:hover { box-shadow: 0 0 0 1px rgba(201,168,76,0.5), 0 12px 34px rgba(0,0,0,0.5); }
     @keyframes orbit-counter { from{transform:rotate(0deg)} to{transform:rotate(-360deg)} }
-    .orbit-photo { position: absolute; inset: 0; background-size: cover; background-position: center; transition: transform 0.4s ease; }
+    .orbit-photo {
+      position: absolute; inset: 0; background-size: cover; background-position: center;
+      transition: transform 0.4s ease;
+      -webkit-mask-image: radial-gradient(circle, black 48%, transparent 76%);
+      mask-image: radial-gradient(circle, black 48%, transparent 76%);
+    }
     .orbit-card:hover .orbit-photo { transform: scale(1.08); }
     .orbit-overlay {
       position: absolute; inset: 0;
-      background: linear-gradient(160deg, rgba(201,168,76,0.15) 0%, rgba(26,58,92,0.55) 100%);
+      background: linear-gradient(160deg, rgba(201,168,76,0.12) 0%, rgba(26,58,92,0.5) 100%);
       transition: background 0.3s;
     }
     .orbit-card:hover .orbit-overlay { background: linear-gradient(160deg, rgba(201,168,76,0.35) 0%, rgba(26,58,92,0.45) 100%); }
@@ -166,6 +234,27 @@
       letter-spacing: 0.2em; text-transform: uppercase;
       color: var(--or); border: 1px solid rgba(201,168,76,0.4);
       padding: 0.3rem 1rem; border-radius: 2rem; margin-bottom: 1.8rem;
+    }
+    .hero-sigle {
+      max-width: 560px; margin: 0 auto 1.4rem;
+    }
+    .hero-sigle-acro {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.15rem; font-weight: 700; letter-spacing: 0.12em;
+      color: var(--or); margin-bottom: 0.5rem;
+    }
+    .hero-sigle-divider {
+      width: 36px; height: 1px; background: rgba(201,168,76,0.5);
+      margin: 0 auto 0.6rem;
+    }
+    .hero-sigle-def {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.3rem; font-weight: 500; font-style: italic;
+      color: rgba(255,255,255,0.92);
+      line-height: 1.6; letter-spacing: 0.01em;
+    }
+    .hero-sigle-def .def-hl {
+      color: var(--or); font-weight: 700; font-style: normal;
     }
     .hero h2 {
       font-family: 'Playfair Display', serif;
@@ -601,10 +690,6 @@
       opacity: 1;
       transform: translateY(0);
     }
-    @keyframes pulse-logo {
-      0%, 100% { transform: scale(1); box-shadow: 0 0 0 0 rgba(201,168,76,0.4); }
-      50% { transform: scale(1.06); box-shadow: 0 0 0 12px rgba(201,168,76,0); }
-    }
   </style>
 </head>
 <body>
@@ -640,7 +725,7 @@
 <!-- NAV -->
 <nav>
   <div class="nav-logo">
-    <img src="https://res.cloudinary.com/dk3vflsiq/image/upload/v1782258625/56a04e6e-9ea7-461a-b024-f24c8a1c8301_mp5rfc.png" alt="Logo OREPSA" />
+    <img src="https://res.cloudinary.com/dk3vflsiq/image/upload/f_auto,q_auto,w_500/v1782258625/56a04e6e-9ea7-461a-b024-f24c8a1c8301_mp5rfc.png" alt="Logo OREPSA" />
     <div class="nav-logo-text">
       <h1>ONG OREPSA</h1>
       <small>Dapaong · Togo</small>
@@ -658,6 +743,34 @@
 
 <!-- HERO -->
 <section class="hero">
+
+  <!-- PHOTOS DE FOND FONDUES -->
+  <div class="hero-bg-photos">
+    <div class="hero-bg-photo p1">
+      <div class="bg-layer" style="background-image:url('https://res.cloudinary.com/dk3vflsiq/image/upload/f_auto,q_auto,w_700/v1782733562/African_aid_workers_distributing_food_to_villagers_in_Sahel_West_Africa_r_20260629_113317_0000_angelj.png')"></div>
+      <div class="bg-layer" style="background-image:url('https://res.cloudinary.com/dk3vflsiq/image/upload/f_auto,q_auto,w_700/v1782733563/African_children_pumping_water_from_a_village_well_in_Savanes_region_Togo__20260629_114419_0000_pwkx45.png')"></div>
+      <div class="bg-layer" style="background-image:url('https://res.cloudinary.com/dk3vflsiq/image/upload/f_auto,q_auto,w_700/v1782733562/African_farmer_woman_and_man_working_in_millet_field_in_northern_Togo_savan_20260629_114147_0000_ymysdm.png')"></div>
+      <div class="bg-layer" style="background-image:url('https://res.cloudinary.com/dk3vflsiq/image/upload/f_auto,q_auto,w_700/v1782733563/African_mother_with_baby_on_her_back_in_rural_Togo_village_warm_lighting__20260629_113724_0000_ge0afg.png')"></div>
+    </div>
+    <div class="hero-bg-photo p2">
+      <div class="bg-layer" style="background-image:url('https://res.cloudinary.com/dk3vflsiq/image/upload/f_auto,q_auto,w_700/v1782733563/African_children_pumping_water_from_a_village_well_in_Savanes_region_Togo__20260629_114419_0000_pwkx45.png')"></div>
+      <div class="bg-layer" style="background-image:url('https://res.cloudinary.com/dk3vflsiq/image/upload/f_auto,q_auto,w_700/v1782733562/African_farmer_woman_and_man_working_in_millet_field_in_northern_Togo_savan_20260629_114147_0000_ymysdm.png')"></div>
+      <div class="bg-layer" style="background-image:url('https://res.cloudinary.com/dk3vflsiq/image/upload/f_auto,q_auto,w_700/v1782733563/African_mother_with_baby_on_her_back_in_rural_Togo_village_warm_lighting__20260629_113724_0000_ge0afg.png')"></div>
+      <div class="bg-layer" style="background-image:url('https://res.cloudinary.com/dk3vflsiq/image/upload/f_auto,q_auto,w_700/v1782733562/African_aid_workers_distributing_food_to_villagers_in_Sahel_West_Africa_r_20260629_113317_0000_angelj.png')"></div>
+    </div>
+    <div class="hero-bg-photo p3">
+      <div class="bg-layer" style="background-image:url('https://res.cloudinary.com/dk3vflsiq/image/upload/f_auto,q_auto,w_700/v1782733562/African_farmer_woman_and_man_working_in_millet_field_in_northern_Togo_savan_20260629_114147_0000_ymysdm.png')"></div>
+      <div class="bg-layer" style="background-image:url('https://res.cloudinary.com/dk3vflsiq/image/upload/f_auto,q_auto,w_700/v1782733563/African_mother_with_baby_on_her_back_in_rural_Togo_village_warm_lighting__20260629_113724_0000_ge0afg.png')"></div>
+      <div class="bg-layer" style="background-image:url('https://res.cloudinary.com/dk3vflsiq/image/upload/f_auto,q_auto,w_700/v1782733562/African_aid_workers_distributing_food_to_villagers_in_Sahel_West_Africa_r_20260629_113317_0000_angelj.png')"></div>
+      <div class="bg-layer" style="background-image:url('https://res.cloudinary.com/dk3vflsiq/image/upload/f_auto,q_auto,w_700/v1782733563/African_children_pumping_water_from_a_village_well_in_Savanes_region_Togo__20260629_114419_0000_pwkx45.png')"></div>
+    </div>
+    <div class="hero-bg-photo p4">
+      <div class="bg-layer" style="background-image:url('https://res.cloudinary.com/dk3vflsiq/image/upload/f_auto,q_auto,w_700/v1782733563/African_mother_with_baby_on_her_back_in_rural_Togo_village_warm_lighting__20260629_113724_0000_ge0afg.png')"></div>
+      <div class="bg-layer" style="background-image:url('https://res.cloudinary.com/dk3vflsiq/image/upload/f_auto,q_auto,w_700/v1782733562/African_aid_workers_distributing_food_to_villagers_in_Sahel_West_Africa_r_20260629_113317_0000_angelj.png')"></div>
+      <div class="bg-layer" style="background-image:url('https://res.cloudinary.com/dk3vflsiq/image/upload/f_auto,q_auto,w_700/v1782733563/African_children_pumping_water_from_a_village_well_in_Savanes_region_Togo__20260629_114419_0000_pwkx45.png')"></div>
+      <div class="bg-layer" style="background-image:url('https://res.cloudinary.com/dk3vflsiq/image/upload/f_auto,q_auto,w_700/v1782733562/African_farmer_woman_and_man_working_in_millet_field_in_northern_Togo_savan_20260629_114147_0000_ymysdm.png')"></div>
+    </div>
+  </div>
 
   <!-- SCÈNE ORBITALE -->
   <div class="orbit-scene">
@@ -679,12 +792,18 @@
     </svg>
     <div class="logo-center">
       <div class="logo-glow"></div>
-      <img class="hero-logo" style="animation: pulse-logo 2.4s ease-in-out infinite;" src="https://res.cloudinary.com/dk3vflsiq/image/upload/v1782258625/56a04e6e-9ea7-461a-b024-f24c8a1c8301_mp5rfc.png" alt="Logo OREPSA"/>
+      <img class="hero-logo" src="https://res.cloudinary.com/dk3vflsiq/image/upload/f_auto,q_auto,w_500/v1782258625/56a04e6e-9ea7-461a-b024-f24c8a1c8301_mp5rfc.png" alt="Logo OREPSA"/>
+      <svg class="logo-ring-text" viewBox="0 0 210 210" aria-hidden="true" focusable="false">
+        <path id="ringTextPath" d="M105,105 m-95,0 a95,95 0 1,1 190,0 a95,95 0 1,1 -190,0" fill="none"/>
+        <text>
+          <textPath href="#ringTextPath" startOffset="0" textLength="597" lengthAdjust="spacingAndGlyphs">ORGANISATION POUR LA RÉHABILITATION ET L'ÉPANOUISSEMENT DES POPULATIONS DE LA SAVANE　·　</textPath>
+        </text>
+      </svg>
     </div>
     <div class="orbit-arm">
       <div class="orbit-node">
         <div class="orbit-card">
-          <div class="orbit-photo" style="background-image:url('https://res.cloudinary.com/dk3vflsiq/image/upload/v1782733562/African_aid_workers_distributing_food_to_villagers_in_Sahel_West_Africa_r_20260629_113317_0000_angelj.png')"></div>
+          <div class="orbit-photo" style="background-image:url('https://res.cloudinary.com/dk3vflsiq/image/upload/f_auto,q_auto,w_700/v1782733562/African_aid_workers_distributing_food_to_villagers_in_Sahel_West_Africa_r_20260629_113317_0000_angelj.png')"></div>
           <div class="orbit-overlay"></div>
           <div class="orbit-badge">🚨</div>
           <div class="orbit-info"><div class="orbit-label">Secours & Urgence</div></div>
@@ -692,7 +811,7 @@
       </div>
       <div class="orbit-node">
         <div class="orbit-card">
-          <div class="orbit-photo" style="background-image:url('https://res.cloudinary.com/dk3vflsiq/image/upload/v1782733563/African_mother_with_baby_on_her_back_in_rural_Togo_village_warm_lighting__20260629_113724_0000_ge0afg.png')"></div>
+          <div class="orbit-photo" style="background-image:url('https://res.cloudinary.com/dk3vflsiq/image/upload/f_auto,q_auto,w_700/v1782733563/African_mother_with_baby_on_her_back_in_rural_Togo_village_warm_lighting__20260629_113724_0000_ge0afg.png')"></div>
           <div class="orbit-overlay"></div>
           <div class="orbit-badge">🤱</div>
           <div class="orbit-info"><div class="orbit-label">Mère & Enfant</div></div>
@@ -700,7 +819,7 @@
       </div>
       <div class="orbit-node">
         <div class="orbit-card">
-          <div class="orbit-photo" style="background-image:url('https://res.cloudinary.com/dk3vflsiq/image/upload/v1782733563/African_children_pumping_water_from_a_village_well_in_Savanes_region_Togo__20260629_114419_0000_pwkx45.png')"></div>
+          <div class="orbit-photo" style="background-image:url('https://res.cloudinary.com/dk3vflsiq/image/upload/f_auto,q_auto,w_700/v1782733563/African_children_pumping_water_from_a_village_well_in_Savanes_region_Togo__20260629_114419_0000_pwkx45.png')"></div>
           <div class="orbit-overlay"></div>
           <div class="orbit-badge">💧</div>
           <div class="orbit-info"><div class="orbit-label">EHA / WASH</div></div>
@@ -708,7 +827,7 @@
       </div>
       <div class="orbit-node">
         <div class="orbit-card">
-          <div class="orbit-photo" style="background-image:url('https://res.cloudinary.com/dk3vflsiq/image/upload/v1782733562/African_farmer_woman_and_man_working_in_millet_field_in_northern_Togo_savan_20260629_114147_0000_ymysdm.png')"></div>
+          <div class="orbit-photo" style="background-image:url('https://res.cloudinary.com/dk3vflsiq/image/upload/f_auto,q_auto,w_700/v1782733562/African_farmer_woman_and_man_working_in_millet_field_in_northern_Togo_savan_20260629_114147_0000_ymysdm.png')"></div>
           <div class="orbit-overlay"></div>
           <div class="orbit-badge">🌿</div>
           <div class="orbit-info"><div class="orbit-label">Agroécologie</div></div>
@@ -719,6 +838,11 @@
 
   <!-- TEXTE -->
   <div class="hero-inner">
+    <div class="hero-sigle">
+      <div class="hero-sigle-acro">O.R.E.P.S.A.</div>
+      <div class="hero-sigle-divider"></div>
+      <p class="hero-sigle-def"><span class="def-hl">O</span>rganisation pour la <span class="def-hl">R</span>éhabilitation et l'<span class="def-hl">É</span>panouissement des <span class="def-hl">P</span>opulations de la <span class="def-hl">S</span>avane</p>
+    </div>
     <div class="hero-tag">Organisation Régionale · Savanes · Togo</div>
     <h2 id="slogan-hero">
       <span class="slogan-cycle" id="sc-1">Agir.</span><br/>
@@ -737,7 +861,7 @@
 
 <!-- BANDE DÉFILANTE PRO -->
 <div class="ticker-wrap">
-  <div class="ticker-label"><img src="https://res.cloudinary.com/dk3vflsiq/image/upload/v1782258625/56a04e6e-9ea7-461a-b024-f24c8a1c8301_mp5rfc.png" alt="Logo OREPSA" style="width:28px;height:28px;border-radius:50%;object-fit:cover;margin-right:0.5rem;border:1.5px solid rgba(0,0,0,0.15);" />OREPSA</div>
+  <div class="ticker-label"><img src="https://res.cloudinary.com/dk3vflsiq/image/upload/f_auto,q_auto,w_500/v1782258625/56a04e6e-9ea7-461a-b024-f24c8a1c8301_mp5rfc.png" alt="Logo OREPSA" style="width:28px;height:28px;border-radius:50%;object-fit:cover;margin-right:0.5rem;border:1.5px solid rgba(0,0,0,0.15);" />OREPSA</div>
   <div class="ticker-fade-left"></div>
   <div class="ticker-fade-right"></div>
   <div class="ticker-track">
@@ -796,14 +920,14 @@
     <div class="domaines-grid">
       <div class="domaine-card" onclick="openDomainDrawer('urgence')">
         <div class="domaine-icon">🚨</div>
-        <h3>Secours et assistance humanitaire d'urgence</h3>
+        <h3>Secours d'urgence</h3>
         <p>Réponse rapide aux crises et aux déplacements de populations : aide alimentaire, abri et matériel d'urgence lors de catastrophes.</p>
         <div class="card-cta">Voir les activités →</div>
         <div class="card-arrow">›</div>
       </div>
       <div class="domaine-card" onclick="openDomainDrawer('protection')">
         <div class="domaine-icon">🤱</div>
-        <h3>Protection de la mère et de l'enfant</h3>
+        <h3>Cohésion sociale</h3>
         <p>Accompagnement des femmes, des enfants et des personnes vulnérables : nutrition, santé maternelle, autonomisation économique et plaidoyer pour leurs droits.</p>
         <div class="card-cta">Voir les activités →</div>
         <div class="card-arrow">›</div>
@@ -1032,7 +1156,7 @@
 <footer>
   <div class="footer-inner">
     <div class="footer-brand">
-      <img src="https://res.cloudinary.com/dk3vflsiq/image/upload/v1782258625/56a04e6e-9ea7-461a-b024-f24c8a1c8301_mp5rfc.png" alt="Logo" />
+      <img src="https://res.cloudinary.com/dk3vflsiq/image/upload/f_auto,q_auto,w_500/v1782258625/56a04e6e-9ea7-461a-b024-f24c8a1c8301_mp5rfc.png" alt="Logo" />
       <span>ONG OREPSA</span>
     </div>
     <p>BP 265 Dapaong, Togo &nbsp;·&nbsp; <a href="mailto:info@ong-orepsa.com" style="color:rgba(255,255,255,0.55);text-decoration:none;border-bottom:1px solid rgba(201,168,76,0.4);">info@ong-orepsa.com</a></p>
@@ -1066,12 +1190,12 @@ let photos = [], videos = [], articles = [], currentPhotoIndex = 0;
 const DOMAINES = {
   urgence: {
     icon: '🚨',
-    title: 'Secours et assistance humanitaire d\'urgence',
+    title: 'Secours d\'urgence',
     desc: 'Réponse rapide aux crises, aux déplacements de populations et aux catastrophes naturelles. Nous intervenons avec de l\'aide alimentaire, des abris d\'urgence et du matériel de première nécessité pour les familles affectées.'
   },
   protection: {
     icon: '🤱',
-    title: 'Protection de la mère et de l\'enfant',
+    title: 'Cohésion sociale',
     desc: 'Accompagnement des femmes, des enfants et des personnes vulnérables à travers des programmes de nutrition, de santé maternelle, d\'autonomisation économique et de plaidoyer pour leurs droits fondamentaux.'
   },
   wash: {
@@ -1546,3 +1670,4 @@ window.openDrawerLightbox = openDrawerLightbox;
 </script>
 </body>
 </html>
+
