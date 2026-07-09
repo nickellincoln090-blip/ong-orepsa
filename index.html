@@ -1054,7 +1054,7 @@
         </div>
         <div class="contact-item">
           <div class="ci-icon">📞</div>
-          <div><strong>Téléphone</strong><p>+228 90 16 82 36<br/>+228 98 41 87 14</p></div>
+          <div><strong>Téléphone</strong><p><a href="tel:+22890168236" style="color:var(--bleu);text-decoration:none;border-bottom:1px solid var(--or);">+228 90 16 82 36</a><br/><a href="tel:+22898418714" style="color:var(--bleu);text-decoration:none;border-bottom:1px solid var(--or);">+228 98 41 87 14</a></p></div>
         </div>
         <div class="contact-item">
           <div class="ci-icon">✉️</div>
@@ -1185,6 +1185,12 @@ const app = initializeApp(firebaseConfig);
 const db = getFirestore(app);
 
 let photos = [], videos = [], articles = [], currentPhotoIndex = 0;
+let rawPhotos = [], rawVideos = [], rawArticles = [];
+function isVisibleNow(item) {
+  if (!item.scheduledAt) return true;
+  const d = item.scheduledAt.toDate ? item.scheduledAt.toDate() : new Date(item.scheduledAt);
+  return d <= new Date();
+}
 
 // ─── CONFIG DOMAINES ─────────────────────────────
 const DOMAINES = {
@@ -1195,8 +1201,8 @@ const DOMAINES = {
   },
   protection: {
     icon: '🤱',
-    title: 'Cohésion sociale',
-    desc: 'Accompagnement des femmes, des enfants et des personnes vulnérables à travers des programmes de nutrition, de santé maternelle, d\'autonomisation économique et de plaidoyer pour leurs droits fondamentaux.'
+    title: 'Cohésion sociale — Inclusion et égalité des chances',
+    desc: 'Promotion de l\'inclusion, de l\'égalité des chances et des droits des femmes et des enfants.'
   },
   wash: {
     icon: '💧',
@@ -1212,6 +1218,7 @@ const DOMAINES = {
 
 let currentDomain = null, currentDrawerTab = 'articles';
 let domainArticles = [], domainPhotos = [], domainVideos = [];
+let rawDomainArticles = [], rawDomainPhotos = [], rawDomainVideos = [];
 let drawerArticleUnsub = null, drawerPhotoUnsub = null, drawerVideoUnsub = null;
 
 function openDomainDrawer(domain) {
@@ -1244,20 +1251,20 @@ function loadDrawerData(domain) {
   if (drawerArticleUnsub) drawerArticleUnsub();
   drawerArticleUnsub = onSnapshot(
     query(collection(db,'articles'), where('published','==',true), where('domain','==',domain), orderBy('createdAt','desc')),
-    snap => { domainArticles = snap.docs.map(d=>({id:d.id,...d.data()})); if(currentDrawerTab==='articles') renderDrawerArticles(); },
-    err => { if(err.code==='failed-precondition') { domainArticles=[]; if(currentDrawerTab==='articles') renderDrawerArticles(); } }
+    snap => { rawDomainArticles = snap.docs.map(d=>({id:d.id,...d.data()})); domainArticles = rawDomainArticles.filter(isVisibleNow); if(currentDrawerTab==='articles') renderDrawerArticles(); },
+    err => { if(err.code==='failed-precondition') { rawDomainArticles=[]; domainArticles=[]; if(currentDrawerTab==='articles') renderDrawerArticles(); } }
   );
   if (drawerPhotoUnsub) drawerPhotoUnsub();
   drawerPhotoUnsub = onSnapshot(
     query(collection(db,'photos'), where('published','==',true), where('domain','==',domain), orderBy('createdAt','desc')),
-    snap => { domainPhotos = snap.docs.map(d=>({id:d.id,...d.data()})); if(currentDrawerTab==='photos') renderDrawerPhotos(); },
-    err => { if(err.code==='failed-precondition') { domainPhotos=[]; if(currentDrawerTab==='photos') renderDrawerPhotos(); } }
+    snap => { rawDomainPhotos = snap.docs.map(d=>({id:d.id,...d.data()})); domainPhotos = rawDomainPhotos.filter(isVisibleNow); if(currentDrawerTab==='photos') renderDrawerPhotos(); },
+    err => { if(err.code==='failed-precondition') { rawDomainPhotos=[]; domainPhotos=[]; if(currentDrawerTab==='photos') renderDrawerPhotos(); } }
   );
   if (drawerVideoUnsub) drawerVideoUnsub();
   drawerVideoUnsub = onSnapshot(
     query(collection(db,'videos'), where('published','==',true), where('domain','==',domain), orderBy('createdAt','desc')),
-    snap => { domainVideos = snap.docs.map(d=>({id:d.id,...d.data()})); if(currentDrawerTab==='videos') renderDrawerVideos(); },
-    err => { if(err.code==='failed-precondition') { domainVideos=[]; if(currentDrawerTab==='videos') renderDrawerVideos(); } }
+    snap => { rawDomainVideos = snap.docs.map(d=>({id:d.id,...d.data()})); domainVideos = rawDomainVideos.filter(isVisibleNow); if(currentDrawerTab==='videos') renderDrawerVideos(); },
+    err => { if(err.code==='failed-precondition') { rawDomainVideos=[]; domainVideos=[]; if(currentDrawerTab==='videos') renderDrawerVideos(); } }
   );
 }
 
@@ -1320,23 +1327,44 @@ document.addEventListener('keydown', e => {
 // ─── PHOTOS ──────────────────────────────────────
 onSnapshot(
   query(collection(db, 'photos'), where('published', '==', true), orderBy('createdAt', 'desc')),
-  snap => { photos = snap.docs.map(d => ({ id: d.id, ...d.data() })); renderPhotos(); },
+  snap => { rawPhotos = snap.docs.map(d => ({ id: d.id, ...d.data() })); photos = rawPhotos.filter(isVisibleNow); renderPhotos(); },
   err => console.error('PHOTOS:', err.message)
 );
 
 // ─── VIDEOS ──────────────────────────────────────
 onSnapshot(
   query(collection(db, 'videos'), where('published', '==', true), orderBy('createdAt', 'desc')),
-  snap => { videos = snap.docs.map(d => ({ id: d.id, ...d.data() })); renderVideos(); },
+  snap => { rawVideos = snap.docs.map(d => ({ id: d.id, ...d.data() })); videos = rawVideos.filter(isVisibleNow); renderVideos(); },
   err => console.error('VIDEOS:', err.message)
 );
 
 // ─── ARTICLES ────────────────────────────────────
 onSnapshot(
   query(collection(db, 'articles'), where('published', '==', true), orderBy('createdAt', 'desc')),
-  snap => { articles = snap.docs.map(d => ({ id: d.id, ...d.data() })); renderArticles(); },
+  snap => { rawArticles = snap.docs.map(d => ({ id: d.id, ...d.data() })); articles = rawArticles.filter(isVisibleNow); renderArticles(); },
   err => console.error('ARTICLES:', err.message)
 );
+
+// ─── PUBLICATION PROGRAMMÉE : réévaluation périodique ────
+// Comme il n'y a pas de serveur qui "pousse" la publication à l'heure exacte,
+// on revérifie toutes les 30s les éléments dont l'heure programmée vient de passer,
+// pour tout visiteur ayant la page déjà ouverte.
+setInterval(() => {
+  const newPhotos = rawPhotos.filter(isVisibleNow);
+  if (newPhotos.length !== photos.length) { photos = newPhotos; renderPhotos(); }
+  const newVideos = rawVideos.filter(isVisibleNow);
+  if (newVideos.length !== videos.length) { videos = newVideos; renderVideos(); }
+  const newArticles = rawArticles.filter(isVisibleNow);
+  if (newArticles.length !== articles.length) { articles = newArticles; renderArticles(); }
+  if (currentDomain) {
+    const newDomainArticles = rawDomainArticles.filter(isVisibleNow);
+    if (newDomainArticles.length !== domainArticles.length) { domainArticles = newDomainArticles; if(currentDrawerTab==='articles') renderDrawerArticles(); }
+    const newDomainPhotos = rawDomainPhotos.filter(isVisibleNow);
+    if (newDomainPhotos.length !== domainPhotos.length) { domainPhotos = newDomainPhotos; if(currentDrawerTab==='photos') renderDrawerPhotos(); }
+    const newDomainVideos = rawDomainVideos.filter(isVisibleNow);
+    if (newDomainVideos.length !== domainVideos.length) { domainVideos = newDomainVideos; if(currentDrawerTab==='videos') renderDrawerVideos(); }
+  }
+}, 30000);
 
 // ─── COMMENTAIRES ────────────────────────────────
 onSnapshot(
